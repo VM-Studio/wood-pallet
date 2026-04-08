@@ -1,26 +1,130 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ── Fuentes ─────────────────────────────────── */
+  --font-sans:  var(--font-geist-sans);
+  --font-mono:  var(--font-geist-mono);
+  --font-serif: Georgia, serif;
+
+  /* ── Paleta principal ────────────────────────── */
+  --color-brand-black:  #0D0D0D;
+  --color-brand-dark:   #1C1208;
+  --color-brand-brown:  #6B3F1A;
+  --color-brand-tan:    #B8814A;
+  --color-brand-sand:   #E8D5BC;
+  --color-brand-cream:  #F7F3EE;
+  --color-brand-white:  #FAFAF9;
+
+  /* ── Acentos ─────────────────────────────────── */
+  --color-accent-gold:  #C9A84C;
+  --color-accent-green: #1E4035;
+  --color-accent-warm:  #8C4A2F;
+
+  /* ── Degradados ──────────────────────────────── */
+  --background-image-gradient-warm:  linear-gradient(to bottom, var(--color-brand-white) 0%, var(--color-brand-cream) 50%, var(--color-brand-sand) 100%);
+  --background-image-gradient-dark:  linear-gradient(135deg, var(--color-brand-dark) 0%, var(--color-brand-black) 100%);
+  --background-image-gradient-brown: linear-gradient(135deg, var(--color-brand-brown) 0%, var(--color-brand-dark) 100%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --color-primary:   #1C1208;
+  --color-secondary: #C9A84C;
+  --color-light:     #F7F3EE;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FAFAF9;
+  color: #1C1208;
+  font-family: var(--font-sans), sans-serif;
+}
+
+/* ── Tipografía base ─────────────────────────── */
+em {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ── Clases de utilidad ──────────────────────── */
+@layer components {
+
+  /* Botones — rounded-none absoluto */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           px-7 py-3.5 rounded-none
+           bg-brand-dark text-brand-cream text-sm tracking-wide
+           hover:bg-brand-brown transition-all duration-200
+           active:scale-95 cursor-pointer;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2
+           px-7 py-3.5 rounded-none
+           border border-brand-dark text-brand-dark text-sm tracking-wide
+           bg-transparent hover:bg-brand-dark hover:text-brand-cream
+           transition-all duration-200 active:scale-95 cursor-pointer;
+  }
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2
+           px-7 py-3.5 rounded-none
+           bg-accent-green text-white text-sm tracking-wide
+           hover:bg-[#075E54] transition-all duration-200
+           active:scale-95 cursor-pointer;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2
+           px-7 py-3.5 rounded-none
+           bg-accent-gold text-brand-dark text-sm tracking-wide
+           hover:bg-brand-tan hover:text-white transition-all duration-200
+           active:scale-95 cursor-pointer;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2
+           px-7 py-3.5 rounded-none
+           bg-transparent text-brand-tan text-sm tracking-wide
+           hover:text-brand-dark transition-all duration-200
+           active:scale-95 cursor-pointer;
+  }
+
+  /* Label de sección */
+  .section-label {
+    @apply text-[10px] uppercase tracking-[0.2em] text-brand-tan block;
+  }
+
+  /* Título de sección */
+  .section-title {
+    @apply text-3xl md:text-4xl font-light text-brand-dark leading-tight;
+    letter-spacing: -0.02em;
+  }
+
+  /* Línea decorativa dorada */
+  .deco-line {
+    @apply h-px w-12 bg-accent-gold block;
+  }
+
+  /* Sección padding */
+  .section-padding {
+    @apply py-20 md:py-28 px-4 md:px-8;
+  }
+
+  /* Container */
+  .container-max {
+    @apply max-w-6xl mx-auto;
+  }
+
+  /* Input estilo */
+  .input-field {
+    @apply w-full rounded-none border border-brand-sand bg-brand-white
+           py-3 px-4 text-sm text-brand-dark placeholder:text-brand-tan
+           focus:border-brand-tan focus:outline-none
+           transition-colors duration-200;
+  }
+
+  /* Input label */
+  .input-label {
+    @apply block text-[10px] uppercase tracking-wide text-brand-tan mb-1.5;
+  }
 }
