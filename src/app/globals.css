@@ -116,7 +116,7 @@ em {
 
   /* Título de sección */
   .section-title {
-    @apply text-3xl md:text-4xl font-light text-brand-dark leading-tight;
+    @apply text-4xl md:text-5xl font-light text-brand-dark leading-tight;
     letter-spacing: -0.02em;
   }
 

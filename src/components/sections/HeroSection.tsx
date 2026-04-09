@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { FaArrowRight } from 'react-icons/fa'
+import { FaArrowRight, FaPhone } from 'react-icons/fa'
 import Link from 'next/link'
 import Image from 'next/image'
 import { EMPRESA } from '@/lib/constants'
@@ -44,8 +44,8 @@ export default function HeroSection() {
             {/* H1 */}
             <FadeUp delay={0.08} inView={inView}>
               <h1
-                className="font-light text-brand-dark leading-tight"
-                style={{ fontSize: 'clamp(1.75rem, 5vw, 5.5rem)', letterSpacing: '-0.03em', overflowWrap: 'break-word' }}
+                className="font-light text-brand-dark leading-tight text-[2.6rem] md:text-[clamp(2rem,5vw,5.5rem)]"
+                style={{ letterSpacing: '-0.03em', overflowWrap: 'break-word' }}
               >
                 Líderes en{' '}
                 <em className="text-brand-brown">pallets</em>{' '}
@@ -65,7 +65,7 @@ export default function HeroSection() {
 
             {/* Párrafo */}
             <FadeUp delay={0.32} inView={inView}>
-              <p className="text-brand-tan leading-relaxed sm:max-w-md">
+              <p className="text-brand-tan leading-relaxed text-sm sm:text-base sm:max-w-md">
                 Venta de pallets de madera nuevos y usados para uso local y exportación.{' '}
                 <span className="font-medium text-brand-dark">Más de 20 años</span> de
                 trayectoria familiar, stock permanente y tratamiento{' '}
@@ -81,6 +81,7 @@ export default function HeroSection() {
                   className="btn-outline w-full sm:w-auto justify-center"
                 >
                   {EMPRESA.telefono}
+                  <FaPhone className="text-sm" />
                 </a>
                 <Link href="/productos" className="btn-outline w-full sm:w-auto justify-center">
                   Ver productos
