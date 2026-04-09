@@ -7,10 +7,20 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-brand-dark text-brand-cream">
+    <footer
+      className="bg-brand-dark text-brand-cream relative"
+      style={{
+        backgroundImage: 'url(/footer.png?v=2)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      {/* Overlay oscuro para que el texto sea legible */}
+      <div className="absolute inset-0 bg-brand-dark/60" />
 
       {/* Contenido principal */}
-      <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-16">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
 
           {/* Columna 1 — Marca */}
@@ -29,7 +39,7 @@ export default function Footer() {
               </div>
             </Link>
 
-            <p className="text-brand-sand/60 text-sm leading-relaxed max-w-xs">
+            <p className="text-white/80 text-sm leading-relaxed max-w-xs">
               Empresa familiar con más de 10 años de trayectoria en la fabricación
               y comercialización de pallets de madera.
             </p>
@@ -58,8 +68,8 @@ export default function Footer() {
             <nav className="flex flex-col gap-2" aria-label="Links del footer">
               {NAV_LINKS.map((link) => (
                 <Link key={link.href} href={link.href}
-                  className="text-brand-sand/60 hover:text-accent-gold text-sm transition-colors duration-200 flex items-center gap-2 group">
-                  <span className="w-px h-3 bg-brand-tan/30 group-hover:bg-accent-gold transition-colors" />
+                  className="text-white/80 hover:text-accent-gold text-sm transition-colors duration-200 flex items-center gap-2 group">
+                  <span className="w-px h-3 bg-white/30 group-hover:bg-accent-gold transition-colors" />
                   {link.label}
                 </Link>
               ))}
@@ -71,7 +81,7 @@ export default function Footer() {
 
             <div className="flex flex-col gap-4">
               <a href={`tel:${EMPRESA.telefono.replace(/\s/g, '')}`}
-                className="flex items-start gap-3 text-sm text-brand-sand/60 hover:text-accent-gold transition-colors group">
+                className="flex items-start gap-3 text-sm text-white/80 hover:text-accent-gold transition-colors group">
                 <div className="w-7 h-7 bg-white/5 group-hover:bg-accent-gold/10 flex items-center justify-center shrink-0 mt-0.5 transition-colors">
                   <FaPhone className="text-xs" />
                 </div>
@@ -82,7 +92,7 @@ export default function Footer() {
               </a>
 
               <a href={WHATSAPP_LINKS.general} target="_blank" rel="noopener noreferrer"
-                className="flex items-start gap-3 text-sm text-brand-sand/60 hover:text-green-400 transition-colors group">
+                className="flex items-start gap-3 text-sm text-white/80 hover:text-green-400 transition-colors group">
                 <div className="w-7 h-7 bg-white/5 group-hover:bg-accent-green/20 flex items-center justify-center shrink-0 mt-0.5 transition-colors">
                   <FaWhatsapp className="text-xs" />
                 </div>
@@ -93,7 +103,7 @@ export default function Footer() {
               </a>
 
               <a href={`mailto:${EMPRESA.email}`}
-                className="flex items-start gap-3 text-sm text-brand-sand/60 hover:text-accent-gold transition-colors group">
+                className="flex items-start gap-3 text-sm text-white/80 hover:text-accent-gold transition-colors group">
                 <div className="w-7 h-7 bg-white/5 group-hover:bg-accent-gold/10 flex items-center justify-center shrink-0 mt-0.5 transition-colors">
                   <FaEnvelope className="text-xs" />
                 </div>
@@ -104,7 +114,7 @@ export default function Footer() {
               </a>
 
               <a href={EMPRESA.maps} target="_blank" rel="noopener noreferrer"
-                className="flex items-start gap-3 text-sm text-brand-sand/60 hover:text-accent-gold transition-colors group">
+                className="flex items-start gap-3 text-sm text-white/80 hover:text-accent-gold transition-colors group">
                 <div className="w-7 h-7 bg-white/5 group-hover:bg-accent-gold/10 flex items-center justify-center shrink-0 mt-0.5 transition-colors">
                   <FaMapMarkerAlt className="text-xs" />
                 </div>
@@ -120,12 +130,12 @@ export default function Footer() {
       </div>
 
       {/* Franja inferior */}
-      <div className="border-t border-white/8">
+      <div className="relative z-10 border-t border-white/8">
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-brand-sand/40 text-xs text-center sm:text-left">
+          <p className="text-white/60 text-xs text-center sm:text-left">
             © {currentYear} Wood Pallet — Todos los derechos reservados. Tigre, Buenos Aires, Argentina.
           </p>
-          <p className="text-brand-sand/30 text-xs">
+          <p className="text-white/50 text-xs">
             Fabricación y venta de pallets de madera · NIMF-15
           </p>
         </div>

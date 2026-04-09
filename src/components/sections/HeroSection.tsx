@@ -35,7 +35,7 @@ export default function HeroSection() {
       ref={ref}
       className="bg-linear-to-b from-brand-white via-brand-cream to-brand-sand"
     >
-      <div className="max-w-6xl mx-auto px-4 md:px-8 py-6 md:py-10">
+      <div className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
           {/* ── Columna izquierda — Texto ── */}
@@ -45,7 +45,7 @@ export default function HeroSection() {
             <FadeUp delay={0.08} inView={inView}>
               <h1
                 className="font-light text-brand-dark leading-tight"
-                style={{ fontSize: 'clamp(2rem, 6vw, 5.5rem)', letterSpacing: '-0.03em', wordBreak: 'break-word', hyphens: 'auto' }}
+                style={{ fontSize: 'clamp(1.75rem, 5vw, 5.5rem)', letterSpacing: '-0.03em', overflowWrap: 'break-word' }}
               >
                 Líderes en{' '}
                 <em className="text-brand-brown">pallets</em>{' '}
