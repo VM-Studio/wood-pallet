@@ -34,12 +34,32 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
   background-color: #FAFAF9;
   color: #1C1208;
   font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ── Responsive: iOS inputs — evitar zoom automático ── */
+input, select, textarea {
+  font-size: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* ── Tipografía base ─────────────────────────── */
@@ -126,5 +146,17 @@ em {
   /* Input label */
   .input-label {
     @apply block text-[10px] uppercase tracking-wide text-brand-tan mb-1.5;
+  }
+}
+
+/* ── WhatsApp flotante — safe area iPhones con notch ── */
+.whatsapp-float {
+  bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  right: 1.5rem;
+}
+@media (max-width: 767px) {
+  .whatsapp-float {
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    right: 1rem;
   }
 }

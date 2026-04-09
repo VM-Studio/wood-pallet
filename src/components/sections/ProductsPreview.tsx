@@ -49,7 +49,7 @@ export default function ProductsPreview() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section ref={ref} className="py-20 md:py-28 px-4 md:px-8 bg-brand-white">
+    <section ref={ref} className="py-14 md:py-20 lg:py-28 px-4 md:px-8 bg-brand-white">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -82,7 +82,7 @@ export default function ProductsPreview() {
           />
         </div>
 
-        {/* Grid de productos */}
+        {/* Grid de productos: 1 col mobile, 2 sm, 4 lg */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {PRODUCTOS.map(({ nombre, medida, carga, uso, img, waLink }, i) => (
             <motion.div
@@ -92,13 +92,15 @@ export default function ProductsPreview() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: EASE, delay: 0.1 + i * 0.08 }}
             >
-              {/* Imagen — tamaño fijo igual en todas */}
-              <div className="relative w-full bg-brand-cream overflow-hidden" style={{ height: '180px' }}>
+              {/* Imagen */}
+              <div className="relative w-full bg-brand-cream overflow-hidden aspect-video sm:aspect-auto sm:h-60">
                 <Image
                   src={`/${img}`}
                   alt={nombre}
                   fill
-                  className="object-contain object-center p-4 group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  priority
+                  className="object-contain object-center p-2 group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 

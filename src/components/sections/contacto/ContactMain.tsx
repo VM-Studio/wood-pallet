@@ -47,13 +47,13 @@ export default function ContactMain() {
   ]
 
   return (
-    <section className="bg-brand-cream py-20 md:py-28 px-5 md:px-10">
+    <section className="bg-brand-cream py-14 md:py-20 lg:py-28 px-5 md:px-10">
       <div className="max-w-6xl mx-auto">
         {/* Grid: mobile stacks form first, desktop 40/60 */}
-        <div className="grid grid-cols-1 md:grid-cols-[40fr_60fr] gap-12 md:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[40fr_60fr] gap-12 md:gap-16">
 
           {/* ── Formulario (col 2 en desktop, primero en mobile) ── */}
-          <div className="order-1 md:order-2">
+          <div className="order-1 lg:order-2">
             <h2 className="section-title mb-2">
               Completá el <em>formulario</em>
             </h2>
@@ -62,7 +62,7 @@ export default function ContactMain() {
           </div>
 
           {/* ── Información de contacto (col 1 en desktop, segundo en mobile) ── */}
-          <div className="order-2 md:order-1">
+          <div className="order-2 lg:order-1">
             <h2 className="section-title mb-2">
               Toda la información que <em>necesitás</em>
             </h2>
@@ -117,7 +117,7 @@ export default function ContactMain() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="w-9 h-9 flex items-center justify-center border border-brand-sand hover:border-accent-gold bg-brand-white text-brand-tan hover:text-accent-gold transition-all duration-200"
+                  className="w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center border border-brand-sand hover:border-accent-gold bg-brand-white text-brand-tan hover:text-accent-gold transition-all duration-200"
                 >
                   <FaInstagram className="text-base" />
                 </a>
@@ -126,7 +126,7 @@ export default function ContactMain() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="w-9 h-9 flex items-center justify-center border border-brand-sand hover:border-accent-gold bg-brand-white text-brand-tan hover:text-accent-gold transition-all duration-200"
+                  className="w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center border border-brand-sand hover:border-accent-gold bg-brand-white text-brand-tan hover:text-accent-gold transition-all duration-200"
                 >
                   <FaFacebook className="text-base" />
                 </a>

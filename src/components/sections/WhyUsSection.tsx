@@ -53,13 +53,13 @@ function VentajaCard({ num, titulo, emWord, texto, delay, inView }: {
 }) {
   return (
     <motion.div
-      className="group relative flex flex-col gap-5 p-8 bg-brand-cream hover:bg-brand-white transition-colors duration-300 cursor-default overflow-hidden"
+      className="group relative flex flex-col gap-5 p-6 lg:p-8 bg-brand-cream hover:bg-brand-white transition-colors duration-300 cursor-default overflow-hidden"
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, ease: EASE, delay }}
     >
       {/* Número índice */}
-      <span className="text-[2rem] font-extralight text-brand-sand group-hover:text-accent-gold transition-colors duration-300 leading-none select-none">
+      <span className="text-3xl lg:text-[2rem] font-extralight text-brand-sand group-hover:text-accent-gold transition-colors duration-300 leading-none select-none">
         {num}
       </span>
 
@@ -74,8 +74,8 @@ function VentajaCard({ num, titulo, emWord, texto, delay, inView }: {
       {/* Texto */}
       <p className="text-sm text-brand-tan leading-relaxed">{texto}</p>
 
-      {/* Línea hover inferior */}
-      <span className="absolute bottom-0 left-0 h-px bg-accent-gold w-0 group-hover:w-full transition-all duration-500" />
+      {/* Línea inferior — visible en mobile, hover en desktop */}
+      <span className="absolute bottom-0 left-0 h-px bg-accent-gold w-full lg:w-0 lg:group-hover:w-full transition-all duration-500" />
     </motion.div>
   )
 }
@@ -85,7 +85,7 @@ export default function WhyUsSection() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section ref={ref} className="py-20 md:py-28 px-4 md:px-8 bg-brand-cream">
+    <section ref={ref} className="py-14 md:py-20 lg:py-28 px-4 md:px-8 bg-brand-cream">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -128,7 +128,7 @@ export default function WhyUsSection() {
           />
         </div>
 
-        {/* Grid de cards: gap-px sobre fondo brand-sand simula bordes entre celdas */}
+        {/* Grid de cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-sand">
           {VENTAJAS.map((v, i) => (
             <VentajaCard key={v.num} {...v} delay={0.1 + i * 0.08} inView={inView} />

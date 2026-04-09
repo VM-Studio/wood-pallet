@@ -28,7 +28,7 @@ export default function ContactHero() {
   ]
 
   return (
-    <section className="bg-brand-white py-16 md:py-24 px-5 md:px-10">
+    <section className="bg-brand-white py-12 md:py-20 px-5 md:px-10">
       <div className="max-w-3xl mx-auto text-center">
         {/* Breadcrumb */}
         <nav className="flex items-center justify-center gap-2 mb-8 text-[11px] uppercase tracking-[0.18em] text-brand-tan">
@@ -68,21 +68,21 @@ export default function ContactHero() {
         </div>
 
         {/* Canales de contacto rápido */}
-        <div className="flex flex-row flex-wrap justify-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3">
           {channels.map((ch) => (
             <a
               key={ch.label}
               href={ch.href}
               target={ch.target}
               rel={ch.target === '_blank' ? 'noopener noreferrer' : undefined}
-              className="flex items-center gap-3 border border-brand-sand hover:border-brand-tan bg-brand-white px-5 py-3 transition-all duration-200 group"
+              className="flex items-center gap-3 border border-brand-sand hover:border-brand-tan bg-brand-white px-5 py-3.5 transition-all duration-200 group min-h-14"
             >
               <span className="text-base shrink-0">{ch.icon}</span>
               <div className="text-left">
                 <span className="block text-[10px] uppercase tracking-[0.15em] text-brand-tan">
                   {ch.label}
                 </span>
-                <span className="block text-sm font-medium text-brand-dark truncate max-w-40">
+                <span className="block text-sm font-medium text-brand-dark">
                   {ch.value}
                 </span>
               </div>

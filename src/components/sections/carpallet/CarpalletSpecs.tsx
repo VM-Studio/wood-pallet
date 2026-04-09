@@ -24,8 +24,8 @@ export default function CarpalletSpecs() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section id="especificaciones" ref={ref} className="py-20 md:py-28 px-4 md:px-8 bg-brand-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+    <section id="especificaciones" ref={ref} className="py-14 md:py-20 lg:py-28 px-4 md:px-8 bg-brand-white">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start">
 
         {/* Columna izquierda — Especificaciones */}
         <div>
@@ -65,12 +65,12 @@ export default function CarpalletSpecs() {
             {SPECS.map(({ clave, valor }) => (
               <div
                 key={clave}
-                className="flex justify-between items-start gap-4 py-3.5 border-b border-brand-sand"
+                className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4 py-3.5 border-b border-brand-sand"
               >
-                <span className="text-[10px] uppercase tracking-wide text-brand-tan shrink-0">
+                <span className="text-[10px] uppercase tracking-wide text-brand-tan sm:shrink-0">
                   {clave}
                 </span>
-                <span className="text-sm font-medium text-brand-dark text-right">{valor}</span>
+                <span className="text-sm font-medium text-brand-dark sm:text-right">{valor}</span>
               </div>
             ))}
           </motion.div>

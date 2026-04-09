@@ -33,10 +33,10 @@ export default function NimfSection() {
   return (
     <section
       ref={ref}
-      className="py-20 md:py-28 px-4 md:px-8"
+      className="py-14 md:py-20 lg:py-28 px-4 md:px-8"
       style={{ background: '#1C1208' }}
     >
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-start">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 md:gap-20 items-start">
 
         {/* Columna izquierda — Explicación */}
         <div className="flex flex-col gap-7">
@@ -85,7 +85,7 @@ export default function NimfSection() {
         </div>
 
         {/* Columna derecha — Cards de datos */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col sm:flex-row lg:flex-col gap-4">
           {CARDS.map(({ num, texto }, i) => (
             <motion.div
               key={num}

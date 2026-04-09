@@ -18,7 +18,7 @@ export default function ContactMap() {
       </div>
 
       {/* Mapa full-width */}
-      <div className="w-full h-80 md:h-96">
+      <div className="w-full h-64 md:h-80 lg:h-96">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3288.5!2d-58.5950847!3d-34.4412257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bca506e77010ab%3A0x51b4961b20373d64!2sBenito%20Lynch%20%26%20Don%20Orione%2C%20Los%20Troncos%20del%20Talar%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1234567890"
           width="100%"

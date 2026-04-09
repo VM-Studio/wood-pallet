@@ -2,7 +2,6 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import Link from 'next/link'
 
 const EASE = 'easeOut'
 
@@ -13,21 +12,6 @@ export default function ProductsHero() {
   return (
     <section ref={ref} className="py-20 md:py-28 px-4 md:px-8 bg-brand-white">
       <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-6">
-
-        {/* Breadcrumb */}
-        <motion.nav
-          className="flex items-center gap-2 text-xs text-brand-tan"
-          initial={{ opacity: 0, y: 10 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.4, ease: EASE }}
-          aria-label="Breadcrumb"
-        >
-          <Link href="/" className="hover:text-brand-dark transition-colors duration-200">
-            Inicio
-          </Link>
-          <span className="text-brand-sand">/</span>
-          <span className="text-brand-dark">Productos</span>
-        </motion.nav>
 
         {/* Label */}
         <motion.p

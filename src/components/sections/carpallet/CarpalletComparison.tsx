@@ -29,7 +29,7 @@ export default function CarpalletComparison() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section ref={ref} className="py-20 md:py-28 px-4 md:px-8 bg-brand-cream">
+    <section ref={ref} className="py-14 md:py-20 lg:py-28 px-4 md:px-8 bg-brand-cream">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -67,9 +67,15 @@ export default function CarpalletComparison() {
           </motion.p>
         </div>
 
+        {/* Indicador scroll mobile */}
+        <p className="block md:hidden text-xs text-brand-tan text-center mb-2">
+          ← Deslizá para ver más →
+        </p>
+
         {/* Tabla */}
         <motion.div
           className="overflow-x-auto border border-brand-sand"
+          style={{ WebkitOverflowScrolling: 'touch' } as React.CSSProperties}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: EASE, delay: 0.28 }}

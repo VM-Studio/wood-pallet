@@ -68,7 +68,7 @@ function ServiceBlock({
 
   const imgCol = (
     <motion.div
-      className="relative aspect-4/3 bg-brand-sand overflow-hidden"
+      className="relative aspect-4/3 bg-brand-sand overflow-hidden order-1 lg:order-0"
       initial={{ opacity: 0, x: reverse ? 24 : -24 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.65, ease: EASE, delay: 0.1 }}
@@ -91,7 +91,7 @@ function ServiceBlock({
 
   const textCol = (
     <motion.div
-      className="flex flex-col gap-5 justify-center"
+      className="flex flex-col gap-5 justify-center order-2 lg:order-0"
       initial={{ opacity: 0, x: reverse ? -24 : 24 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.65, ease: EASE, delay: 0.18 }}
@@ -126,7 +126,7 @@ function ServiceBlock({
   )
 
   return (
-    <div className="py-14 border-b border-brand-sand last:border-b-0 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+    <div className="py-10 md:py-14 border-b border-brand-sand last:border-b-0 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
       {reverse ? (
         <>
           {textCol}
@@ -147,7 +147,7 @@ export default function ServicesMain() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section ref={ref} className="py-20 md:py-28 px-4 md:px-8 bg-brand-cream">
+    <section ref={ref} className="py-14 md:py-20 lg:py-28 px-4 md:px-8 bg-brand-cream overflow-hidden">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}

@@ -2,10 +2,10 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { FaWhatsapp, FaArrowRight } from 'react-icons/fa'
+import { FaArrowRight } from 'react-icons/fa'
 import Link from 'next/link'
 import Image from 'next/image'
-import { WHATSAPP_LINKS } from '@/lib/constants'
+import { EMPRESA } from '@/lib/constants'
 
 // Framer Motion v12: ease debe ser EasingFunction o string, no number[]
 const EASE = 'easeOut'
@@ -33,26 +33,19 @@ export default function HeroSection() {
   return (
     <section
       ref={ref}
-      className="min-h-[90vh] bg-linear-to-b from-brand-white via-brand-cream to-brand-sand"
+      className="bg-linear-to-b from-brand-white via-brand-cream to-brand-sand"
     >
-      <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+      <div className="max-w-6xl mx-auto px-4 md:px-8 py-6 md:py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
           {/* ── Columna izquierda — Texto ── */}
           <div className="flex flex-col gap-8">
 
-            {/* Label */}
-            <FadeUp delay={0} inView={inView}>
-              <p className="section-label">
-                Fabricación y venta de pallets · Tigre, Buenos Aires
-              </p>
-            </FadeUp>
-
             {/* H1 */}
-            <FadeUp delay={0.16} inView={inView}>
+            <FadeUp delay={0.08} inView={inView}>
               <h1
                 className="font-light text-brand-dark leading-tight"
-                style={{ fontSize: 'clamp(2.8rem, 6vw, 5.5rem)', letterSpacing: '-0.03em' }}
+                style={{ fontSize: 'clamp(2rem, 6vw, 5.5rem)', letterSpacing: '-0.03em', wordBreak: 'break-word', hyphens: 'auto' }}
               >
                 Líderes en{' '}
                 <em className="text-brand-brown">pallets</em>{' '}
@@ -72,7 +65,7 @@ export default function HeroSection() {
 
             {/* Párrafo */}
             <FadeUp delay={0.32} inView={inView}>
-              <p className="text-brand-tan leading-relaxed max-w-md">
+              <p className="text-brand-tan leading-relaxed sm:max-w-md">
                 Venta de pallets de madera nuevos y usados para uso local y exportación.{' '}
                 <span className="font-medium text-brand-dark">Más de 20 años</span> de
                 trayectoria familiar, stock permanente y tratamiento{' '}
@@ -82,17 +75,14 @@ export default function HeroSection() {
 
             {/* Botones */}
             <FadeUp delay={0.4} inView={inView}>
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
                 <a
-                  href={WHATSAPP_LINKS.general}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-whatsapp"
+                  href={`tel:${EMPRESA.telefono.replace(/\s/g, '')}`}
+                  className="btn-outline w-full sm:w-auto justify-center"
                 >
-                  <FaWhatsapp className="text-base" />
-                  Cotizar al instante
+                  {EMPRESA.telefono}
                 </a>
-                <Link href="/productos" className="btn-outline">
+                <Link href="/productos" className="btn-outline w-full sm:w-auto justify-center">
                   Ver productos
                   <FaArrowRight className="text-sm" />
                 </Link>
@@ -107,12 +97,13 @@ export default function HeroSection() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, ease: EASE, delay: 0.2 }}
           >
-            {/* Imagen principal — proporción controlada */}
-            <div className="relative w-full aspect-4/3 overflow-hidden bg-brand-sand">
+            {/* Imagen principal */}
+            <div className="relative w-full aspect-video md:aspect-4/3 overflow-hidden">
               <Image
-                src="/palletsNIMF.png"
-                alt="Pallets de madera con certificación NIMF-15 — Wood Pallet Tigre"
+                src="/palletseminuevo.png"
+                alt="Pallets semi nuevos de madera — Wood Pallet Tigre"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-contain object-center"
                 priority
               />
@@ -122,20 +113,14 @@ export default function HeroSection() {
             <div className="bg-brand-dark px-5 py-4 flex items-center justify-between gap-4">
               <div>
                 <p className="text-[9px] uppercase tracking-[0.2em] text-brand-tan mb-1">
-                  Certificación internacional
+                  Pallets semi nuevos
                 </p>
                 <p className="text-brand-sand/80 text-sm leading-relaxed">
-                  Pallets con tratamiento{' '}
-                  <em className="text-accent-gold">NIMF-15</em>{' '}
-                  aptos para exportación
+                  La mejor relación{' '}
+                  <em className="text-accent-gold">calidad-precio</em>{' '}
+                  del mercado · Stock permanente
                 </p>
               </div>
-              <span
-                className="text-accent-gold font-extralight shrink-0 leading-none"
-                style={{ fontSize: '2rem', letterSpacing: '-0.02em' }}
-              >
-                15
-              </span>
             </div>
           </motion.div>
 

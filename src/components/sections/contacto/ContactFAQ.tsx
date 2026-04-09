@@ -111,7 +111,7 @@ export default function ContactFAQ() {
             href={WHATSAPP_LINKS.general}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-whatsapp"
+            className="btn-whatsapp w-full sm:w-auto justify-center"
           >
             <FaWhatsapp /> Preguntanos por WhatsApp
           </a>

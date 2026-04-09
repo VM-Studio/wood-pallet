@@ -22,7 +22,7 @@ export const PRODUCTS: Product[] = [
     uso: 'Consumo masivo',
     descripcion:
       'Medida estándar europea, ampliamente utilizada en supermercados, retail y logística internacional. Compatible con la mayoría de los equipos de manipulación del mercado.',
-    imagen: '/images/productos/pallet-euro.jpg',
+    imagen: '/palleteuro.png',
     wa: WHATSAPP_LINKS.euro,
     badge: 'Más pedido',
     nimf: true,
@@ -35,7 +35,7 @@ export const PRODUCTS: Product[] = [
     uso: 'Consumo masivo',
     descripcion:
       'El pallet normalizado tipo ARLOG, preferido por empresas argentinas. Versátil y resistente, ideal para almacenes, distribución y transporte pesado.',
-    imagen: '/images/productos/pallet-estandar.jpg',
+    imagen: '/palletstandard.png',
     wa: WHATSAPP_LINKS.estandar,
     badge: 'Tipo ARLOG',
     nimf: true,
@@ -48,7 +48,7 @@ export const PRODUCTS: Product[] = [
     uso: 'Consumo masivo',
     descripcion:
       'Versión optimizada del estándar con menor peso propio. Ideal para mercadería liviana donde se prioriza la reducción de costo por unidad sin sacrificar funcionalidad.',
-    imagen: '/images/productos/pallet-estandar-liviano.jpg',
+    imagen: '/palletstandard.png',
     wa: WHATSAPP_LINKS.liviano,
     badge: null,
     nimf: true,
@@ -61,7 +61,7 @@ export const PRODUCTS: Product[] = [
     uso: 'Consumo masivo',
     descripcion:
       'Pallets recuperados y revisados en excelente estado. La opción más económica para operaciones internas donde el aspecto visual es secundario a la funcionalidad.',
-    imagen: '/images/productos/pallet-usados.jpg',
+    imagen: '/palletseminuevo.png',
     wa: WHATSAPP_LINKS.usados,
     badge: 'Económico',
     nimf: 'consultar',
@@ -74,7 +74,7 @@ export const PRODUCTS: Product[] = [
     uso: 'Industria cementera',
     descripcion:
       'Diseñado específicamente para la industria cementera y construcción. La viga central (tirante) permite la manipulación con zorras y montacargas en condiciones de peso extremo.',
-    imagen: '/images/productos/pallet-tirante.jpg',
+    imagen: '/palletcontirante.png',
     wa: WHATSAPP_LINKS.tirante,
     badge: 'Industrial',
     nimf: true,
@@ -87,7 +87,7 @@ export const PRODUCTS: Product[] = [
     uso: 'Cargas reforzadas',
     descripcion:
       'Construido con tablas en ambas caras para máxima resistencia y durabilidad. El preferido para cargas extremas, exportación y operaciones de alto tráfico.',
-    imagen: '/images/productos/pallet-doble-faz.jpg',
+    imagen: '/palletdoblefaz.png',
     wa: WHATSAPP_LINKS.dobleFaz,
     badge: 'Alta resistencia',
     nimf: true,
@@ -100,7 +100,7 @@ export const PRODUCTS: Product[] = [
     uso: 'Uso general',
     descripcion:
       'Fabricamos pallets a medida para cualquier necesidad específica. Dimensiones, tipo de madera, cantidad de tablas y refuerzos según los requerimientos del cliente.',
-    imagen: '/images/productos/pallet-especiales.jpg',
+    imagen: '/palletsNIMF.png',
     wa: WHATSAPP_LINKS.especiales,
     badge: 'A medida',
     nimf: true,

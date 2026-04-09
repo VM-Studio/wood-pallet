@@ -64,7 +64,7 @@ export default function CarpalletWhy() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section ref={ref} className="py-20 md:py-28 px-4 md:px-8 bg-brand-cream">
+    <section ref={ref} className="py-14 md:py-20 lg:py-28 px-4 md:px-8 bg-brand-cream">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -95,8 +95,8 @@ export default function CarpalletWhy() {
           />
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-brand-sand">
+        {/* Grid: 1 col mobile, 2 sm, 3 lg */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-brand-sand">
           {VENTAJAS.map(({ num, Icon, iconColor, titulo, texto }, i) => (
             <motion.div
               key={num}

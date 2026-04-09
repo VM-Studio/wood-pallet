@@ -20,7 +20,7 @@ export default function ComparisonTable() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section ref={ref} className="py-20 md:py-28 px-4 md:px-8 bg-brand-white">
+    <section ref={ref} className="py-14 md:py-20 lg:py-28 px-4 md:px-8 bg-brand-white">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -59,9 +59,15 @@ export default function ComparisonTable() {
           </motion.p>
         </div>
 
+        {/* Indicador scroll mobile */}
+        <p className="block md:hidden text-xs text-brand-tan text-center mb-2">
+          ← Deslizá para ver más →
+        </p>
+
         {/* Tabla */}
         <motion.div
           className="overflow-x-auto border border-brand-sand"
+          style={{ WebkitOverflowScrolling: 'touch' } as React.CSSProperties}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: EASE, delay: 0.28 }}
@@ -73,7 +79,7 @@ export default function ComparisonTable() {
                 {COLS.map((col) => (
                   <th
                     key={col.key}
-                    className="px-5 py-4 text-left text-[10px] uppercase tracking-[0.12em] text-brand-cream font-medium whitespace-nowrap border-r border-brand-tan/10 last:border-r-0"
+                    className="px-3 md:px-5 py-3 md:py-4 text-left text-[10px] uppercase tracking-[0.12em] text-brand-cream font-medium whitespace-nowrap border-r border-brand-tan/10 last:border-r-0"
                   >
                     {col.label}
                   </th>
@@ -91,27 +97,27 @@ export default function ComparisonTable() {
                   }`}
                 >
                   {/* Producto */}
-                  <td className="px-5 py-4 text-sm font-medium text-brand-dark whitespace-nowrap border-r border-brand-sand/40">
+                  <td className="px-3 md:px-5 py-3 md:py-4 text-xs md:text-sm font-medium text-brand-dark whitespace-nowrap border-r border-brand-sand/40">
                     {row.nombre}
                   </td>
 
                   {/* Medida */}
-                  <td className="px-5 py-4 text-sm text-brand-tan whitespace-nowrap border-r border-brand-sand/40">
+                  <td className="px-3 md:px-5 py-3 md:py-4 text-xs md:text-sm text-brand-tan whitespace-nowrap border-r border-brand-sand/40">
                     {row.medida}
                   </td>
 
                   {/* Carga */}
-                  <td className="px-5 py-4 text-sm text-brand-tan whitespace-nowrap border-r border-brand-sand/40">
+                  <td className="px-3 md:px-5 py-3 md:py-4 text-xs md:text-sm text-brand-tan whitespace-nowrap border-r border-brand-sand/40">
                     {row.carga}
                   </td>
 
                   {/* Uso */}
-                  <td className="px-5 py-4 text-sm text-brand-tan border-r border-brand-sand/40">
+                  <td className="px-3 md:px-5 py-3 md:py-4 text-xs md:text-sm text-brand-tan border-r border-brand-sand/40">
                     {row.uso}
                   </td>
 
                   {/* NIMF-15 */}
-                  <td className="px-5 py-4 text-sm whitespace-nowrap border-r border-brand-sand/40">
+                  <td className="px-3 md:px-5 py-3 md:py-4 text-xs md:text-sm whitespace-nowrap border-r border-brand-sand/40">
                     {row.nimf === true ? (
                       <span className="font-semibold text-accent-green">✓</span>
                     ) : (
@@ -120,12 +126,12 @@ export default function ComparisonTable() {
                   </td>
 
                   {/* Acción */}
-                  <td className="px-5 py-4">
+                  <td className="px-3 md:px-5 py-3 md:py-4">
                     <a
                       href={row.wa}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-accent-gold hover:text-brand-brown transition-colors duration-200 whitespace-nowrap font-medium"
+                      className="text-xs text-accent-gold hover:text-brand-brown transition-colors duration-200 whitespace-nowrap font-medium px-1 py-1 inline-block"
                     >
                       Cotizar →
                     </a>

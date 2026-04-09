@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Image from 'next/image'
 import { FaWhatsapp, FaRuler, FaWeightHanging } from 'react-icons/fa'
 import { PRODUCTS, type Product } from '@/lib/products'
 
@@ -35,21 +36,14 @@ function ProductCard({ product, delay, inView }: {
       transition={{ duration: 0.55, ease: EASE, delay }}
     >
       {/* Zona imagen */}
-      <div className="relative aspect-4/3 bg-brand-sand overflow-hidden">
-        {/*
+      <div className="relative aspect-4/3 bg-brand-cream overflow-hidden">
         <Image
           src={imagen}
           alt={nombre}
           fill
-          className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-contain p-3 group-hover:scale-[1.02] transition-transform duration-300"
         />
-        */}
-        {/* Placeholder */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-brand-tan/40 group-hover:scale-[1.02] transition-transform duration-300">
-          <span className="text-4xl">🪵</span>
-          <span className="text-[9px] uppercase tracking-widest">{imagen.split('/').pop()}</span>
-          <span className="text-[8px] text-brand-tan/25">/public{imagen}</span>
-        </div>
 
         {/* Badge */}
         {badge && (
@@ -115,7 +109,7 @@ export default function ProductsGrid() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section ref={ref} className="py-20 md:py-28 px-4 md:px-8 bg-brand-cream">
+    <section ref={ref} className="py-14 md:py-20 lg:py-28 px-4 md:px-8 bg-brand-cream">
       <div className="max-w-6xl mx-auto">
 
         {/* Header de sección */}
@@ -147,7 +141,7 @@ export default function ProductsGrid() {
         </div>
 
         {/* Grid 3 / 2 / 1 columnas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-brand-sand">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {PRODUCTS.map((product, i) => (
             <ProductCard
               key={product.id}
