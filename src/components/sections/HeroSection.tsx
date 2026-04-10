@@ -48,9 +48,9 @@ export default function HeroSection() {
                 style={{ letterSpacing: '-0.03em', overflowWrap: 'break-word' }}
               >
                 Líderes en{' '}
-                <em className="text-brand-brown">pallets</em>{' '}
+                <em className="em-gradient">pallets</em>{' '}
                 de{' '}
-                <em className="text-accent-gold">madera</em>
+                <em className="em-gradient">madera</em>
               </h1>
             </FadeUp>
 
@@ -65,7 +65,7 @@ export default function HeroSection() {
 
             {/* Párrafo */}
             <FadeUp delay={0.32} inView={inView}>
-              <p className="text-brand-tan leading-relaxed text-sm sm:text-base sm:max-w-md">
+              <p className="text-brand-dark/60 leading-relaxed text-sm sm:text-base sm:max-w-md">
                 Venta de pallets de madera nuevos y usados para uso local y exportación.{' '}
                 <span className="font-medium text-brand-dark">Más de 20 años</span> de
                 trayectoria familiar, stock permanente y tratamiento{' '}
@@ -118,7 +118,7 @@ export default function HeroSection() {
                 </p>
                 <p className="text-brand-sand/80 text-sm leading-relaxed">
                   La mejor relación{' '}
-                  <em className="text-accent-gold">calidad-precio</em>{' '}
+                  <em className="em-gradient">calidad-precio</em>{' '}
                   del mercado · Stock permanente
                 </p>
               </div>

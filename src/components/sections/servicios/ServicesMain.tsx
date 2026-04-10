@@ -104,14 +104,14 @@ function ServiceBlock({
       {/* Título H3 */}
       <h3 className="font-light text-brand-dark leading-snug" style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)' }}>
         {titulo}{' '}
-        <em className="text-brand-brown">{emWord}</em>
+        <em className="em-gradient">{emWord}</em>
       </h3>
 
       {/* Línea */}
       <span className="h-px bg-brand-sand block w-8" />
 
       {/* Texto */}
-      <p className="text-sm text-brand-tan leading-relaxed">{texto}</p>
+      <p className="text-sm text-brand-dark/60 leading-relaxed">{texto}</p>
 
       {/* Puntos */}
       <ul className="flex flex-col gap-2.5">
@@ -167,7 +167,7 @@ export default function ServicesMain() {
             transition={{ duration: 0.5, ease: EASE, delay: 0.08 }}
           >
             Todo lo que tu empresa{' '}
-            <em className="text-brand-brown">necesita</em>
+            <em className="em-gradient">necesita</em>
           </motion.h2>
           <motion.span
             className="h-px bg-accent-gold block"

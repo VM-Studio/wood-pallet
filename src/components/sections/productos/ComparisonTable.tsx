@@ -40,7 +40,7 @@ export default function ComparisonTable() {
             transition={{ duration: 0.5, ease: EASE, delay: 0.08 }}
           >
             Elegí el pallet{' '}
-            <em className="text-brand-brown">indicado</em>
+            <em className="em-gradient">indicado</em>
           </motion.h2>
           <motion.span
             className="h-px bg-accent-gold block mb-5"
@@ -50,7 +50,7 @@ export default function ComparisonTable() {
             style={{ maxWidth: 48 }}
           />
           <motion.p
-            className="text-sm text-brand-tan"
+            className="text-sm text-brand-dark/60"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, ease: EASE, delay: 0.22 }}
@@ -60,7 +60,7 @@ export default function ComparisonTable() {
         </div>
 
         {/* Indicador scroll mobile */}
-        <p className="block md:hidden text-xs text-brand-tan text-center mb-2">
+        <p className="block md:hidden text-xs text-brand-dark/50 text-center mb-2">
           ← Deslizá para ver más →
         </p>
 

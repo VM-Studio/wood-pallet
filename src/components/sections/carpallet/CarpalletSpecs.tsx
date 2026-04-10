@@ -45,7 +45,7 @@ export default function CarpalletSpecs() {
             transition={{ duration: 0.5, ease: EASE, delay: 0.08 }}
           >
             Especificaciones del{' '}
-            <em className="text-brand-brown">CarPallet</em>
+            <em className="em-gradient">CarPallet</em>
           </motion.h2>
           <motion.span
             className="h-px bg-accent-gold block mb-10"
@@ -67,7 +67,7 @@ export default function CarpalletSpecs() {
                 key={clave}
                 className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4 py-3.5 border-b border-brand-sand"
               >
-                <span className="text-[10px] uppercase tracking-wide text-brand-tan sm:shrink-0">
+                <span className="text-[10px] uppercase tracking-wide text-brand-dark/50 sm:shrink-0">
                   {clave}
                 </span>
                 <span className="text-sm font-medium text-brand-dark sm:text-right">{valor}</span>

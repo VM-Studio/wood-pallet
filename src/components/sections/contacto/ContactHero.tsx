@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { FaPhone, FaWhatsapp, FaEnvelope } from 'react-icons/fa'
 import { EMPRESA, WHATSAPP_LINKS } from '@/lib/constants'
 
@@ -30,15 +29,6 @@ export default function ContactHero() {
   return (
     <section className="bg-brand-white py-12 md:py-20 px-5 md:px-10">
       <div className="max-w-3xl mx-auto text-center">
-        {/* Breadcrumb */}
-        <nav className="flex items-center justify-center gap-2 mb-8 text-[11px] uppercase tracking-[0.18em] text-brand-tan">
-          <Link href="/" className="hover:text-brand-brown transition-colors duration-200">
-            Inicio
-          </Link>
-          <span>/</span>
-          <span className="text-brand-dark">Contacto</span>
-        </nav>
-
         {/* Label */}
         <span className="section-label mb-4">Estamos para ayudarte</span>
 
@@ -49,23 +39,9 @@ export default function ContactHero() {
 
         {/* Línea dorada */}
         <span
-          className="deco-line mx-auto mt-5 mb-6"
+          className="deco-line mx-auto mt-5 mb-10"
           style={{ display: 'block' }}
         />
-
-        {/* Párrafo */}
-        <p className="text-sm text-brand-tan leading-relaxed max-w-lg mx-auto mb-6">
-          Respondemos cotizaciones al instante por WhatsApp.
-          También podés escribirnos por email o completar el formulario
-          y te contactamos a la brevedad.
-        </p>
-
-        {/* Badge */}
-        <div className="inline-block border border-accent-gold/40 bg-accent-gold/10 px-4 py-2 mb-10">
-          <span className="text-[11px] uppercase tracking-[0.14em] text-brand-brown font-medium">
-            Solo trabajamos con empresas — Venta mayorista
-          </span>
-        </div>
 
         {/* Canales de contacto rápido */}
         <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3">

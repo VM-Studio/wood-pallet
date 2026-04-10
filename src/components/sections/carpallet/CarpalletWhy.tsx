@@ -84,7 +84,7 @@ export default function CarpalletWhy() {
             transition={{ duration: 0.5, ease: EASE, delay: 0.08 }}
           >
             Ventajas que hacen la{' '}
-            <em className="text-brand-brown">diferencia</em>
+            <em className="em-gradient">diferencia</em>
           </motion.h2>
           <motion.span
             className="h-px bg-accent-gold block"
@@ -119,7 +119,7 @@ export default function CarpalletWhy() {
               <h3 className="font-medium text-brand-dark text-base leading-snug pr-8">{titulo}</h3>
 
               {/* Texto */}
-              <p className="text-sm text-brand-tan leading-relaxed">{texto}</p>
+              <p className="text-sm text-brand-dark/60 leading-relaxed">{texto}</p>
 
               {/* Línea hover inferior */}
               <span className="absolute bottom-0 left-0 h-px bg-accent-gold w-0 group-hover:w-full transition-all duration-500" />

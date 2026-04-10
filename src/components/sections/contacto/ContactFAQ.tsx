@@ -93,7 +93,7 @@ export default function ContactFAQ() {
                       transition={{ duration: 0.3, ease: 'easeOut' }}
                       style={{ overflow: 'hidden' }}
                     >
-                      <p className="text-sm text-brand-tan leading-relaxed pb-5">
+                      <p className="text-sm text-brand-dark/60 leading-relaxed pb-5">
                         {faq.a}
                       </p>
                     </motion.div>
@@ -106,7 +106,7 @@ export default function ContactFAQ() {
 
         {/* CTA bajo accordion */}
         <div className="mt-10 flex flex-col items-center gap-4 text-center">
-          <p className="text-sm text-brand-tan">¿Tu pregunta no está acá?</p>
+          <p className="text-sm text-brand-dark/60">¿Tu pregunta no está acá?</p>
           <a
             href={WHATSAPP_LINKS.general}
             target="_blank"

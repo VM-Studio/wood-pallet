@@ -283,7 +283,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="btn-primary w-full mt-2 disabled:opacity-70 disabled:cursor-not-allowed"
+        className="btn-whatsapp w-full mt-2 disabled:opacity-70 disabled:cursor-not-allowed"
       >
         {loading ? (
           <>
@@ -291,7 +291,7 @@ export default function ContactForm() {
             Enviando...
           </>
         ) : (
-          'Enviar consulta por WhatsApp'
+          'Enviar consulta'
         )}
       </button>
     </form>

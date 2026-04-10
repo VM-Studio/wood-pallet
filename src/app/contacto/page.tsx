@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import ContactHero from '@/components/sections/contacto/ContactHero'
 import ContactMain from '@/components/sections/contacto/ContactMain'
-import ContactMap from '@/components/sections/contacto/ContactMap'
-import ContactFAQ from '@/components/sections/contacto/ContactFAQ'
 
 export const metadata: Metadata = {
   title: 'Contacto — Cotizá tus Pallets por WhatsApp | PalletsJJ Tigre',
@@ -33,8 +31,6 @@ export default function ContactoPage() {
     <>
       <ContactHero />
       <ContactMain />
-      <ContactMap />
-      <ContactFAQ />
     </>
   )
 }

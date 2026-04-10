@@ -58,7 +58,7 @@ export default function NimfSection() {
             transition={{ duration: 0.55, ease: EASE, delay: 0.08 }}
           >
             ¿Qué es el{' '}
-            <em className="text-accent-gold">NIMF-15</em>?
+            <em className="em-gradient">NIMF-15</em>?
           </motion.h2>
 
           <motion.span

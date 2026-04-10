@@ -15,7 +15,7 @@ function ProductName({ nombre }: { nombre: string }) {
   return (
     <>
       {words[0]}{' '}
-      <em className="text-brand-brown">{words.slice(1).join(' ')}</em>
+      <em className="em-gradient">{words.slice(1).join(' ')}</em>
     </>
   )
 }
@@ -68,11 +68,11 @@ function ProductCard({ product, delay, inView }: {
 
         {/* Datos técnicos */}
         <div className="flex gap-4 flex-wrap">
-          <span className="flex items-center gap-1.5 text-[10px] uppercase tracking-wide text-brand-tan">
+          <span className="flex items-center gap-1.5 text-[10px] uppercase tracking-wide text-brand-dark/50">
             <FaRuler className="text-[9px] shrink-0" />
             {medida}
           </span>
-          <span className="flex items-center gap-1.5 text-[10px] uppercase tracking-wide text-brand-tan">
+          <span className="flex items-center gap-1.5 text-[10px] uppercase tracking-wide text-brand-dark/50">
             <FaWeightHanging className="text-[9px] shrink-0" />
             {carga}
           </span>
@@ -84,7 +84,7 @@ function ProductCard({ product, delay, inView }: {
         </span>
 
         {/* Descripción */}
-        <p className="text-sm text-brand-tan leading-relaxed mt-1 flex-1">{descripcion}</p>
+        <p className="text-sm text-brand-dark/60 leading-relaxed mt-1 flex-1">{descripcion}</p>
 
         {/* Separador */}
         <span className="h-px bg-brand-sand block mt-2" />
@@ -129,7 +129,7 @@ export default function ProductsGrid() {
             transition={{ duration: 0.5, ease: EASE, delay: 0.08 }}
           >
             Fabricación y stock{' '}
-            <em className="text-brand-brown">permanente</em>
+            <em className="em-gradient">permanente</em>
           </motion.h2>
           <motion.span
             className="h-px bg-accent-gold block"

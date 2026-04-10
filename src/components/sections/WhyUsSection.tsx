@@ -37,7 +37,7 @@ function buildTitle(titulo: string, emWord: string) {
   return (
     <>
       {parts[0]}
-      <em className="text-brand-brown not-italic">{emWord}</em>
+      <em className="em-gradient not-italic">{emWord}</em>
       {parts[1]}
     </>
   )
@@ -72,7 +72,7 @@ function VentajaCard({ num, titulo, emWord, texto, delay, inView }: {
       <span className="h-px bg-brand-sand w-8 block" />
 
       {/* Texto */}
-      <p className="text-sm text-brand-tan leading-relaxed">{texto}</p>
+      <p className="text-sm text-brand-dark/60 leading-relaxed">{texto}</p>
 
       {/* Línea inferior — visible en mobile, hover en desktop */}
       <span className="absolute bottom-0 left-0 h-px bg-accent-gold w-full lg:w-0 lg:group-hover:w-full transition-all duration-500" />
@@ -106,11 +106,11 @@ export default function WhyUsSection() {
             transition={{ duration: 0.5, ease: EASE, delay: 0.08 }}
           >
             Por qué eligen{' '}
-            <em className="text-brand-brown italic">Wood Pallet</em>
+            <em className="em-gradient italic">Wood Pallet</em>
           </motion.h2>
 
           <motion.p
-            className="text-sm text-brand-tan leading-relaxed mb-6"
+            className="text-sm text-brand-dark/60 leading-relaxed mb-6"
             initial={{ opacity: 0, y: 12 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, ease: EASE, delay: 0.14 }}

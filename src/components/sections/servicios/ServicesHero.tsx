@@ -32,7 +32,7 @@ export default function ServicesHero() {
           transition={{ duration: 0.55, ease: EASE, delay: 0.1 }}
         >
           Más que pallets — un servicio{' '}
-          <em className="text-accent-gold">completo</em>
+          <em className="em-gradient">completo</em>
         </motion.h1>
 
         {/* Línea dorada centrada */}

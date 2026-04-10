@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { FaWhatsapp } from 'react-icons/fa'
 import { WHATSAPP_LINKS } from '@/lib/constants'
+import Image from 'next/image'
 
 const EASE = 'easeOut'
 
@@ -37,7 +38,7 @@ export default function CarpalletHero() {
             transition={{ duration: 0.55, ease: EASE, delay: 0.1 }}
           >
             El pallet de{' '}
-            <em className="text-accent-gold">cartón</em>
+            <em className="em-gradient">cartón</em>
             {' '}que tu logística necesita
           </motion.h1>
 
@@ -52,7 +53,7 @@ export default function CarpalletHero() {
 
           {/* Párrafo */}
           <motion.p
-            className="text-sm text-brand-tan leading-relaxed max-w-md"
+            className="text-sm text-brand-dark/60 leading-relaxed max-w-md"
             initial={{ opacity: 0, y: 12 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, ease: EASE, delay: 0.22 }}
@@ -93,22 +94,16 @@ export default function CarpalletHero() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.65, ease: EASE, delay: 0.15 }}
           >
-            {/* Imagen / Placeholder */}
-            <div className="relative aspect-4/3 bg-brand-sand overflow-hidden">
-              {/*
+            {/* Imagen */}
+            <div className="relative aspect-4/3 overflow-hidden">
               <Image
-                src="/images/carpallet/pallet-carton.jpg"
+                src="/palletcarton.png"
                 alt="Pallet de Cartón CarPallet — Wood Pallet Tigre"
                 fill
-                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 45vw"
+                className="object-contain object-center"
+                priority
               />
-              */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-brand-tan/40">
-                <span className="text-5xl">📦</span>
-                <span className="text-[9px] uppercase tracking-widest">pallet-carton.jpg</span>
-                <span className="text-[8px] text-brand-tan/30">/public/images/carpallet/pallet-carton.jpg</span>
-              </div>
-
             </div>
           </motion.div>
         </div>

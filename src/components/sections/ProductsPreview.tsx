@@ -70,7 +70,7 @@ export default function ProductsPreview() {
             transition={{ duration: 0.5, ease: EASE, delay: 0.08 }}
           >
             Pallets para cada{' '}
-            <em className="text-brand-brown">necesidad</em>
+            <em className="em-gradient">necesidad</em>
           </motion.h2>
 
           <motion.span
@@ -110,7 +110,7 @@ export default function ProductsPreview() {
               {/* Info */}
               <div className="px-5 pt-3 pb-5 flex flex-col gap-3 flex-1">
                 {/* Badge uso */}
-                <span className="text-[9px] uppercase tracking-[0.18em] text-brand-tan">
+                <span className="text-[9px] uppercase tracking-[0.18em] text-brand-dark/50">
                   {uso}
                 </span>
 
@@ -118,7 +118,7 @@ export default function ProductsPreview() {
                 <h3 className="font-light text-brand-dark text-base leading-snug">{nombre}</h3>
 
                 {/* Datos */}
-                <div className="flex flex-col gap-1 text-[10px] uppercase tracking-wide text-brand-tan/70 mt-auto">
+                <div className="flex flex-col gap-1 text-[10px] uppercase tracking-wide text-brand-dark/50 mt-auto">
                   <span>{medida}</span>
                   <span>{carga}</span>
                 </div>
@@ -145,7 +145,7 @@ export default function ProductsPreview() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: EASE, delay: 0.4 }}
         >
-          <p className="text-sm text-brand-tan">
+          <p className="text-sm text-brand-dark/60">
             Fabricamos también medidas especiales a pedido
           </p>
           <Link href="/productos" className="btn-outline">

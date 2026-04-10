@@ -1,19 +1,27 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import WhatsAppFloat from '@/components/ui/WhatsAppFloat'
 import SchemaOrg from '@/components/SchemaOrg'
 import './globals.css'
 
-const geistSans = Geist({
+const geistSans = localFont({
+  src: [
+    { path: '../fonts/GeistVF.woff2', weight: '100 900', style: 'normal' },
+  ],
   variable: '--font-geist-sans',
-  subsets: ['latin'],
+  fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+  display: 'swap',
 })
 
-const geistMono = Geist_Mono({
+const geistMono = localFont({
+  src: [
+    { path: '../fonts/GeistMonoVF.woff2', weight: '100 900', style: 'normal' },
+  ],
   variable: '--font-geist-mono',
-  subsets: ['latin'],
+  fallback: ['ui-monospace', 'monospace'],
+  display: 'swap',
 })
 
 export const metadata: Metadata = {

@@ -69,6 +69,18 @@ em {
   font-weight: 400;
 }
 
+/* Degradado marrón para palabras destacadas en em */
+.em-gradient {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(135deg, var(--color-brand-brown) 0%, var(--color-brand-tan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 /* ── Clases de utilidad ──────────────────────── */
 @layer components {
 
@@ -111,7 +123,7 @@ em {
 
   /* Label de sección */
   .section-label {
-    @apply text-[10px] uppercase tracking-[0.2em] text-brand-tan block;
+    @apply text-[10px] uppercase tracking-[0.2em] text-brand-dark/50 block;
   }
 
   /* Título de sección */
@@ -137,9 +149,9 @@ em {
 
   /* Input estilo */
   .input-field {
-    @apply w-full rounded-none border border-brand-sand bg-brand-white
-           py-3 px-4 text-sm text-brand-dark placeholder:text-brand-tan
-           focus:border-brand-tan focus:outline-none
+    @apply w-full rounded-none border border-brand-dark bg-brand-white
+           py-3 px-4 text-sm text-brand-dark placeholder:text-brand-dark/40
+           focus:border-brand-dark focus:outline-none
            transition-colors duration-200;
   }
 
