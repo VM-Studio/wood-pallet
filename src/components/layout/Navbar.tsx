@@ -61,6 +61,7 @@ export default function Navbar() {
             <nav className="hidden md:flex items-center gap-0.5" aria-label="Navegación principal">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href
+                const isCotizador = link.href === '/cotizador'
                 return (
                   <Link
                     key={link.href}
@@ -69,7 +70,9 @@ export default function Navbar() {
                       'relative px-4 py-2 text-sm transition-all duration-200',
                       isActive
                         ? 'text-brand-dark font-medium'
-                        : 'text-brand-tan hover:text-brand-dark font-normal'
+                        : isCotizador
+                          ? 'text-accent-gold font-medium hover:text-brand-dark'
+                          : 'text-brand-tan hover:text-brand-dark font-normal'
                     )}
                   >
                     {link.label}
@@ -138,6 +141,7 @@ export default function Navbar() {
               <nav className="px-4 py-6 flex flex-col gap-0.5" aria-label="Menú móvil">
                 {NAV_LINKS.map((link, i) => {
                   const isActive = pathname === link.href
+                  const isCotizador = link.href === '/cotizador'
                   return (
                     <motion.div
                       key={link.href}
@@ -151,7 +155,9 @@ export default function Navbar() {
                           'flex items-center justify-between px-4 py-3.5 text-sm transition-all',
                           isActive
                             ? 'text-brand-dark font-medium bg-brand-cream'
-                            : 'text-brand-tan hover:text-brand-dark hover:bg-brand-cream'
+                            : isCotizador
+                              ? 'text-accent-gold font-medium hover:text-brand-dark hover:bg-brand-cream'
+                              : 'text-brand-tan hover:text-brand-dark hover:bg-brand-cream'
                         )}
                       >
                         {link.label}

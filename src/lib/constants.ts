@@ -30,5 +30,6 @@ export const NAV_LINKS = [
   { label: 'Productos',        href: '/productos'     },
   { label: 'Pallet de Cartón', href: '/pallet-carton' },
   { label: 'Servicios',        href: '/servicios'     },
+  { label: 'Cotizador',        href: '/cotizador'     },
   { label: 'Contacto',         href: '/contacto'      },
 ]

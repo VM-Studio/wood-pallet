@@ -53,7 +53,7 @@ export default function ServicesHero() {
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-gold/10 border border-accent-gold/30 text-[10px] uppercase tracking-[0.18em] text-brand-brown">
             <span className="w-1.5 h-1.5 bg-accent-gold inline-block" />
-            Empresa familiar con más de 10 años de trayectoria
+            Empresa familiar con más de 20 años de trayectoria
           </span>
         </motion.div>
 

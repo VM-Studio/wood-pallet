@@ -3,8 +3,6 @@ import Script from 'next/script'
 import ServicesHero from '@/components/sections/servicios/ServicesHero'
 import ServicesMain from '@/components/sections/servicios/ServicesMain'
 import NimfSection from '@/components/sections/servicios/NimfSection'
-import PalletTypesInfo from '@/components/sections/servicios/PalletTypesInfo'
-import ServicesCTA from '@/components/sections/servicios/ServicesCTA'
 
 export const metadata: Metadata = {
   title: 'Servicios — Logística, Stock y Tratamiento NIMF-15 | Wood Pallet',
@@ -63,8 +61,6 @@ export default function ServiciosPage() {
       <ServicesHero />
       <ServicesMain />
       <NimfSection />
-      <PalletTypesInfo />
-      <ServicesCTA />
     </>
   )
 }

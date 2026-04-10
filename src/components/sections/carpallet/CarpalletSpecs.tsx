@@ -2,8 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { FaWhatsapp } from 'react-icons/fa'
-import { WHATSAPP_LINKS } from '@/lib/constants'
+import Image from 'next/image'
 
 const EASE = 'easeOut'
 
@@ -14,9 +13,6 @@ const SPECS = [
   { clave: 'Carga máxima estática',     valor: 'Consultar según modelo' },
   { clave: 'Carga máxima dinámica',     valor: 'Consultar según modelo' },
   { clave: 'Resistencia a la humedad',  valor: 'Tratamiento hidrófugo disponible' },
-  { clave: 'Apto para',                 valor: 'Exportación aérea, industria alimentaria, farmacéutica' },
-  { clave: 'Reciclable',                valor: '100%' },
-  { clave: 'Requiere NIMF-15',          valor: 'No' },
 ]
 
 export default function CarpalletSpecs() {
@@ -25,7 +21,7 @@ export default function CarpalletSpecs() {
 
   return (
     <section id="especificaciones" ref={ref} className="py-14 md:py-20 lg:py-28 px-4 md:px-8 bg-brand-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
 
         {/* Columna izquierda — Especificaciones */}
         <div>
@@ -89,45 +85,20 @@ export default function CarpalletSpecs() {
 
         {/* Columna derecha — Imagen + bloque CTA */}
         <motion.div
-          className="flex flex-col gap-0"
+          className="flex flex-col gap-0 mt-20"
           initial={{ opacity: 0, x: 24 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.65, ease: EASE, delay: 0.14 }}
         >
-          {/* Imagen / Placeholder */}
-          <div className="relative aspect-4/3 bg-brand-sand overflow-hidden">
-            {/*
+          {/* Imagen */}
+          <div className="relative aspect-4/3 overflow-hidden">
             <Image
-              src="/images/carpallet/carpallet-detalle.jpg"
+              src="/palletcarton2.png"
               alt="Detalle pallet de cartón CarPallet"
               fill
-              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-contain object-center"
             />
-            */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-brand-tan/40">
-              <span className="text-5xl">📦</span>
-              <span className="text-[9px] uppercase tracking-widest">carpallet-detalle.jpg</span>
-              <span className="text-[8px] text-brand-tan/30">/public/images/carpallet/carpallet-detalle.jpg</span>
-            </div>
-          </div>
-
-          {/* Bloque CTA debajo de la imagen */}
-          <div className="bg-brand-dark p-6 flex flex-col gap-4">
-            <p className="text-[10px] uppercase tracking-wide text-accent-gold">
-              ¿Dudás entre madera y cartón?
-            </p>
-            <p className="text-sm text-brand-cream leading-relaxed">
-              Nuestros asesores te ayudan a elegir el producto correcto para tu operación.
-            </p>
-            <a
-              href={WHATSAPP_LINKS.carton}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-gold self-start text-xs px-5 py-2.5"
-            >
-              <FaWhatsapp className="text-sm" />
-              Consultar ahora
-            </a>
           </div>
         </motion.div>
 
