@@ -56,17 +56,10 @@ export default function CotizadorPage() {
             Cotizá tus pallets <em className="em-gradient">ahora</em>
           </h1>
           <span className="deco-line mb-6 mx-auto block" />
-          <p className="text-brand-dark/60 max-w-md mx-auto mb-8">
+          <p className="text-brand-dark/60 max-w-md mx-auto">
             Completá el formulario y recibís el presupuesto detallado por email al instante.
             Sin llamadas, sin esperas.
           </p>
-
-          {/* Trust signals */}
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-brand-tan">
-            <span>🕐 Respuesta inmediata</span>
-            <span>📧 Presupuesto por email</span>
-            <span>✓ Sin compromiso</span>
-          </div>
         </div>
       </section>
 

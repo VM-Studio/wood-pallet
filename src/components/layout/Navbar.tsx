@@ -4,11 +4,10 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaWhatsapp } from 'react-icons/fa'
 import { HiMenu, HiX } from 'react-icons/hi'
 import { GiWoodBeam } from 'react-icons/gi'
 import { clsx } from 'clsx'
-import { NAV_LINKS, WHATSAPP_LINKS, EMPRESA } from '@/lib/constants'
+import { NAV_LINKS } from '@/lib/constants'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -58,7 +57,8 @@ export default function Navbar() {
               </div>
             </Link>
 
-            <nav className="hidden md:flex items-center gap-0.5" aria-label="Navegación principal">
+            <div className="hidden md:flex items-center gap-0.5 ml-auto">
+              <nav className="flex items-center gap-0.5 mr-4" aria-label="Navegación principal">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href
                 const isCotizador = link.href === '/cotizador'
@@ -87,21 +87,11 @@ export default function Navbar() {
               })}
             </nav>
 
-            <div className="hidden md:flex items-center gap-4">
               <a
-                href={`tel:${EMPRESA.telefono.replace(/\s/g, '')}`}
-                className="text-xs text-brand-tan hover:text-brand-dark transition-colors tracking-wide hidden lg:block"
-              >
-                {EMPRESA.telefono}
-              </a>
-              <a
-                href={WHATSAPP_LINKS.general}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/contacto"
                 className="btn-whatsapp text-xs px-5 py-2.5"
               >
-                <FaWhatsapp className="text-sm" />
-                Cotizar
+                Contacto
               </a>
             </div>
 
@@ -168,19 +158,10 @@ export default function Navbar() {
                 })}
                 <div className="mt-4 pt-4 border-t border-brand-sand flex flex-col gap-3">
                   <a
-                    href={`tel:${EMPRESA.telefono.replace(/\s/g, '')}`}
-                    className="flex items-center justify-center gap-2 px-4 py-3 border border-brand-sand text-brand-dark text-sm hover:bg-brand-cream transition-colors"
+                    href="/contacto"
+                    className="btn-whatsapp w-full justify-center text-center"
                   >
-                    📞 {EMPRESA.telefono}
-                  </a>
-                  <a
-                    href={WHATSAPP_LINKS.general}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-whatsapp w-full justify-center"
-                  >
-                    <FaWhatsapp className="text-lg" />
-                    Cotizar por WhatsApp
+                    Contacto
                   </a>
                 </div>
               </nav>

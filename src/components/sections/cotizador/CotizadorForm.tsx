@@ -308,7 +308,6 @@ export default function CotizadorForm() {
                       onClick={() => set('esExportacion', false)}
                       className="flex-1"
                     >
-                      <div className="text-2xl mb-2">🏭</div>
                       <div className="font-medium text-sm text-brand-dark mb-1">Uso local</div>
                       <div className="text-xs text-brand-tan">Para distribución y operaciones dentro de Argentina</div>
                     </SelectCard>
@@ -317,7 +316,6 @@ export default function CotizadorForm() {
                       onClick={() => set('esExportacion', true)}
                       className="flex-1"
                     >
-                      <div className="text-2xl mb-2">🌍</div>
                       <div className="font-medium text-sm text-brand-dark mb-1">Exportación internacional</div>
                       <div className="text-xs text-brand-tan">Requiere tratamiento NIMF-15 (+$25 por unidad)</div>
                     </SelectCard>
@@ -333,7 +331,7 @@ export default function CotizadorForm() {
                         className="overflow-hidden"
                       >
                         <p className="text-xs mt-3 px-3 py-2 border-l-2" style={{ color: '#1E4035', borderColor: '#1E4035', backgroundColor: '#f0faf8' }}>
-                          ✓ Se incluirá el tratamiento fitosanitario NIMF-15 certificado para exportación a cualquier destino
+                          Se incluirá el tratamiento fitosanitario NIMF-15 certificado para exportación a cualquier destino
                         </p>
                       </motion.div>
                     )}
@@ -558,7 +556,7 @@ export default function CotizadorForm() {
                       onChange={(e) => set('email', e.target.value)}
                       style={inputStyle}
                     />
-                    <p className="text-xs mt-1 text-brand-tan">📧 Te enviamos el presupuesto a este email</p>
+                    <p className="text-xs mt-1 text-brand-tan">Te enviamos el presupuesto a este email</p>
                     {errores.email && <p className="text-xs mt-1" style={{ color: '#C9A84C' }}>{errores.email}</p>}
                   </div>
 
@@ -574,54 +572,6 @@ export default function CotizadorForm() {
                       style={{ ...inputStyle, resize: 'vertical' }}
                     />
                   </div>
-                </div>
-
-                {/* Resumen */}
-                <div className="bg-brand-dark p-6">
-                  <p
-                    className="text-[10px] uppercase tracking-widest mb-4"
-                    style={{ color: '#B8814A' }}
-                  >
-                    Resumen de tu cotización
-                  </p>
-                  <div className="flex flex-col gap-2 mb-4">
-                    {calculo.desglose.map((linea, i) => (
-                      <div key={i} className="flex justify-between items-center">
-                        <span className="text-sm text-brand-cream">
-                          {i === 0
-                            ? `${form.cantidad} pallets ${TIPOS_PALLET.find((t) => t.id === form.tipoPallet)?.nombre ?? ''}`
-                            : linea.descripcion}
-                        </span>
-                        <span className="text-sm font-medium text-brand-cream">
-                          {formatPrecio(linea.monto)}
-                        </span>
-                      </div>
-                    ))}
-                    {calculo.subtotalEnvio === 0 && (
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm text-brand-cream">Envío</span>
-                        <span className="text-sm text-brand-cream">Sin costo (retiro en planta)</span>
-                      </div>
-                    )}
-                  </div>
-                  <div className="h-px mb-4" style={{ backgroundColor: 'rgba(184,129,74,0.2)' }} />
-                  <div className="flex justify-between items-center">
-                    <span
-                      className="text-[10px] uppercase tracking-widest"
-                      style={{ color: '#B8814A' }}
-                    >
-                      Total estimado
-                    </span>
-                    <span
-                      className="font-light"
-                      style={{ color: '#C9A84C', fontSize: '28px', fontFamily: 'Georgia, serif' }}
-                    >
-                      {formatPrecio(calculo.total)}
-                    </span>
-                  </div>
-                  <p className="text-xs italic mt-4" style={{ color: 'rgba(184,129,74,0.6)' }}>
-                    * Presupuesto estimado. El precio final puede variar según disponibilidad y condiciones específicas del pedido.
-                  </p>
                 </div>
 
                 {/* Error general */}
