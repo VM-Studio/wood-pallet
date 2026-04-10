@@ -7,8 +7,6 @@ import { generarEmailCliente, generarEmailAdmin, generarAsuntoAdmin } from '@/li
 // En producción, verificar el dominio en https://resend.com/domains y cambiar el from a:
 // cotizador@madererajj.com (o el dominio que corresponda)
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 const CAMPOS_REQUERIDOS: (keyof DatosCotizacion)[] = [
   'tipoPallet',
   'cantidad',
@@ -63,6 +61,9 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
 
   const adminEmail = process.env.ADMIN_EMAIL ?? 'vaalendelatorre@gmail.com'
   const fromAddress = 'onboarding@resend.dev' // Cambiar a cotizador@madererajj.com en producción
+
+  // Instanciar Resend dentro del handler para que lea la variable de entorno en runtime
+  const resend = new Resend(process.env.RESEND_API_KEY)
 
   try {
     // Enviar email al CLIENTE
