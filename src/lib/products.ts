@@ -15,10 +15,36 @@ export interface Product {
 
 export const PRODUCTS: Product[] = [
   {
+    id: 'seminuevo-reforzado',
+    nombre: 'Pallet Seminuevo Reforzado',
+    medida: '1200 × 1000 mm',
+    carga: '1.500 kg',
+    uso: 'Uso general',
+    descripcion:
+      'Pallet seminuevo de alta resistencia, reforzado con tablas extras para soportar cargas de hasta 1.500 kg. Ideal para operaciones de logística interna donde se necesita durabilidad a menor costo que el nuevo.',
+    imagen: '/palletseminuevo.png',
+    wa: WHATSAPP_LINKS.seminuevoReforzado,
+    badge: 'Más vendido',
+    nimf: 'consultar',
+  },
+  {
+    id: 'seminuevo-descartable',
+    nombre: 'Pallet Seminuevo Descartable',
+    medida: '1200 × 1000 mm',
+    carga: '1.000 kg',
+    uso: 'Uso general',
+    descripcion:
+      'Pallet seminuevo económico para un solo viaje o uso de corto plazo. Capacidad de carga de hasta 1.000 kg. La opción más accesible para envíos, exportación liviana y distribución puntual.',
+    imagen: '/palletseminuevo.png',
+    wa: WHATSAPP_LINKS.seminuevoDescartable,
+    badge: 'Económico',
+    nimf: 'consultar',
+  },
+  {
     id: 'euro',
     nombre: 'Pallet Euro',
     medida: '1200 × 800 mm',
-    carga: '1.300 kg',
+    carga: '1.800 kg',
     uso: 'Consumo masivo',
     descripcion:
       'Medida estándar europea, ampliamente utilizada en supermercados, retail y logística internacional. Compatible con la mayoría de los equipos de manipulación del mercado.',
@@ -54,19 +80,6 @@ export const PRODUCTS: Product[] = [
     nimf: true,
   },
   {
-    id: 'usados',
-    nombre: 'Pallets Usados',
-    medida: '1200 × 1000 mm',
-    carga: '1.800 kg',
-    uso: 'Consumo masivo',
-    descripcion:
-      'Pallets recuperados y revisados en excelente estado. La opción más económica para operaciones internas donde el aspecto visual es secundario a la funcionalidad.',
-    imagen: '/palletseminuevo.png',
-    wa: WHATSAPP_LINKS.usados,
-    badge: 'Económico',
-    nimf: 'consultar',
-  },
-  {
     id: 'tirante',
     nombre: 'Pallet con Tirante',
     medida: 'Personalizada',
@@ -74,7 +87,7 @@ export const PRODUCTS: Product[] = [
     uso: 'Industria cementera',
     descripcion:
       'Diseñado específicamente para la industria cementera y construcción. La viga central (tirante) permite la manipulación con zorras y montacargas en condiciones de peso extremo.',
-    imagen: '/palletcontirante.png',
+    imagen: '/tirante.png',
     wa: WHATSAPP_LINKS.tirante,
     badge: 'Industrial',
     nimf: true,
@@ -94,13 +107,13 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'especiales',
-    nombre: 'Medidas Especiales',
+    nombre: 'Pallets a Medida',
     medida: 'A pedido',
     carga: 'Según diseño',
     uso: 'Uso general',
     descripcion:
       'Fabricamos pallets a medida para cualquier necesidad específica. Dimensiones, tipo de madera, cantidad de tablas y refuerzos según los requerimientos del cliente.',
-    imagen: '/palletsNIMF.png',
+    imagen: '/amedida.png',
     wa: WHATSAPP_LINKS.especiales,
     badge: 'A medida',
     nimf: true,

@@ -26,11 +26,11 @@ function ProductCard({ product, delay, inView }: {
   inView: boolean
 }) {
   const { nombre, medida, carga, uso, descripcion, imagen, wa, badge } = product
-  const isDestacado = badge === 'Más pedido'
+  const isDestacado = badge === 'Más vendido'
 
   return (
     <motion.article
-      className="group flex flex-col bg-brand-white border border-brand-sand hover:border-brand-tan transition-colors duration-300"
+      className="group flex flex-col w-full bg-brand-white border border-brand-sand hover:border-brand-tan transition-colors duration-300"
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.55, ease: EASE, delay }}
@@ -104,9 +104,50 @@ function ProductCard({ product, delay, inView }: {
   )
 }
 
+/** Bloque especial que agrupa los dos tipos de pallet seminuevo */
+function SeminuevoGroup({ products, delay, inView }: {
+  products: Product[]
+  delay: number
+  inView: boolean
+}) {
+  return (
+    <div>
+      {/* Encabezado del grupo */}
+      <motion.div
+        className="flex items-center gap-3 mb-5"
+        initial={{ opacity: 0, y: 14 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.45, ease: EASE, delay }}
+      >
+        <span className="h-px flex-1 bg-brand-sand" />
+        <span className="px-3 py-1 text-[10px] uppercase tracking-[0.14em] font-semibold bg-accent-gold text-brand-dark">
+          Pallets Seminuevos
+        </span>
+        <span className="h-px flex-1 bg-brand-sand" />
+      </motion.div>
+
+      {/* Dos tarjetas centradas, mismo tamaño que las del grid de abajo */}
+      <div className="flex flex-col sm:flex-row justify-center items-stretch gap-5">
+        {products.map((product, i) => (
+          <div key={product.id} className="w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] flex">
+            <ProductCard
+              product={product}
+              delay={delay + i * 0.06}
+              inView={inView}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function ProductsGrid() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
+
+  const seminuevos = PRODUCTS.filter((p) => p.id.startsWith('seminuevo'))
+  const resto      = PRODUCTS.filter((p) => !p.id.startsWith('seminuevo'))
 
   return (
     <section ref={ref} className="py-14 md:py-20 lg:py-28 px-4 md:px-8 bg-brand-cream">
@@ -140,13 +181,30 @@ export default function ProductsGrid() {
           />
         </div>
 
-        {/* Grid 3 / 2 / 1 columnas */}
+        {/* Fila 1: Seminuevos centrados, dos tarjetas del mismo tamaño que las de abajo */}
+        <SeminuevoGroup products={seminuevos} delay={0.08} inView={inView} />
+
+        {/* Separador + etiqueta "Pallets Nuevos" */}
+        <motion.div
+          className="flex items-center gap-3 mt-10 mb-5"
+          initial={{ opacity: 0, y: 14 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.45, ease: EASE, delay: 0.2 }}
+        >
+          <span className="h-px flex-1 bg-brand-sand" />
+          <span className="px-3 py-1 text-[10px] uppercase tracking-[0.14em] font-semibold bg-accent-gold text-brand-dark">
+            Pallets Nuevos
+          </span>
+          <span className="h-px flex-1 bg-brand-sand" />
+        </motion.div>
+
+        {/* Fila 2+: resto de productos en grid de 3 columnas */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {PRODUCTS.map((product, i) => (
+          {resto.map((product, i) => (
             <ProductCard
               key={product.id}
               product={product}
-              delay={0.08 + i * 0.06}
+              delay={0.22 + i * 0.06}
               inView={inView}
             />
           ))}

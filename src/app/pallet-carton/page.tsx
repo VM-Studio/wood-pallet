@@ -5,6 +5,7 @@ import CarpalletWhy from '@/components/sections/carpallet/CarpalletWhy'
 import CarpalletSpecs from '@/components/sections/carpallet/CarpalletSpecs'
 import CarpalletComparison from '@/components/sections/carpallet/CarpalletComparison'
 import CarpalletCTA from '@/components/sections/carpallet/CarpalletCTA'
+import CarpalletModal from '@/components/sections/carpallet/CarpalletModal'
 
 export const metadata: Metadata = {
   title: 'Pallet de Cartón — CarPallet | Alternativa Ecológica a la Madera | Wood Pallet',
@@ -39,6 +40,7 @@ const schemaProduct = {
 export default function PalletCartonPage() {
   return (
     <>
+      <CarpalletModal />
       <Script
         id="schema-carpallet"
         type="application/ld+json"

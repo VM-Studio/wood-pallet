@@ -1,11 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
-import { calcularPresupuesto, type DatosCotizacion } from '@/lib/cotizadorConfig'
+import type { DatosCotizacion } from '@/lib/cotizadorConfig'
 import { generarEmailCliente, generarEmailAdmin, generarAsuntoAdmin } from '@/lib/emailTemplates'
-
-// NOTA: Para desarrollo se usa onboarding@resend.dev como from (no requiere dominio verificado).
-// En producción, verificar el dominio en https://resend.com/domains y cambiar el from a:
-// cotizador@madererajj.com (o el dominio que corresponda)
 
 const CAMPOS_REQUERIDOS: (keyof DatosCotizacion)[] = [
   'tipoPallet',
@@ -22,7 +18,6 @@ function validarEmail(email: string): boolean {
 }
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
-  // Rate limiting básico: verificar que la request viene del propio sitio
   const origin = req.headers.get('origin') ?? ''
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
   if (origin && !origin.startsWith(siteUrl.replace(/\/$/, ''))) {
@@ -36,7 +31,6 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     return NextResponse.json({ success: false, error: 'Body inválido' }, { status: 400 })
   }
 
-  // Validar campos requeridos
   for (const campo of CAMPOS_REQUERIDOS) {
     if (!body[campo] && body[campo] !== 0) {
       return NextResponse.json(
@@ -52,37 +46,33 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
 
   const datos = body as DatosCotizacion
 
-  // RECALCULAR en el servidor — nunca confiar en el cálculo del cliente
-  const calculo = calcularPresupuesto({
-    cantidad: Number(datos.cantidad),
-    esExportacion: Boolean(datos.esExportacion),
-    requiereEnvio: Boolean(datos.requiereEnvio),
-  })
-
   const adminEmail = process.env.ADMIN_EMAIL ?? 'vaalendelatorre@gmail.com'
-  const fromAddress = 'onboarding@resend.dev' // Cambiar a cotizador@madererajj.com en producción
+  // Una vez verificado el dominio en Resend, cambiar a: 'cotizador@tudominio.com.ar'
+  const fromAddress = process.env.FROM_EMAIL ?? 'onboarding@resend.dev'
 
-  // Instanciar Resend dentro del handler para que lea la variable de entorno en runtime
   const resend = new Resend(process.env.RESEND_API_KEY)
 
   try {
-    // Enviar email al CLIENTE
+    // Email al ADMIN (siempre se envía — debe ser el mismo email con el que te registraste en Resend)
     await resend.emails.send({
-      from: `Wood Pallet <${fromAddress}>`,
-      to: [datos.email],
-      subject: `Tu presupuesto de pallets — ${datos.cantidad} ${datos.tipoPallet}`,
-      html: generarEmailCliente(datos, calculo),
-    })
-
-    // Enviar email al ADMIN
-    await resend.emails.send({
-      from: `Cotizador PalletsJJ <${fromAddress}>`,
+      from: `Cotizador Wood Pallet <${fromAddress}>`,
       to: [adminEmail],
-      subject: generarAsuntoAdmin(datos, calculo),
-      html: generarEmailAdmin(datos, calculo),
+      subject: generarAsuntoAdmin(datos),
+      html: generarEmailAdmin(datos),
     })
 
-    return NextResponse.json({ success: true, total: calculo.total })
+    // Email al CLIENTE — solo se envía si hay dominio verificado en Resend
+    // Sin dominio propio, Resend solo permite enviar al email registrado en la cuenta
+    if (process.env.DOMINIO_VERIFICADO === 'true') {
+      await resend.emails.send({
+        from: `Wood Pallet <${fromAddress}>`,
+        to: [datos.email],
+        subject: `Tu consulta de pallets — Wood Pallet`,
+        html: generarEmailCliente(datos),
+      })
+    }
+
+    return NextResponse.json({ success: true })
   } catch (error) {
     console.error('[API cotizador] Error al enviar emails:', error)
     return NextResponse.json(

@@ -35,7 +35,7 @@ export default function StatsSection() {
             className="text-brand-sand/60"
             style={{ fontSize: '1.25rem', fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: 300, letterSpacing: '0.01em' }}
           >
-            Por qué eligen Wood Pallet
+            Por qué elegir Wood Pallet
           </em>
         </motion.p>
 
