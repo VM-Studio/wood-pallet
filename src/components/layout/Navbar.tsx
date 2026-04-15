@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenu, HiX } from 'react-icons/hi'
-import { GiWoodBeam } from 'react-icons/gi'
 import { clsx } from 'clsx'
 import { NAV_LINKS } from '@/lib/constants'
 
@@ -44,17 +44,24 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-14 md:h-20">
 
             <Link href="/" className="flex items-center gap-2.5 group" aria-label="Wood Pallet">
-              <div className="w-9 h-9 bg-brand-dark flex items-center justify-center group-hover:bg-brand-brown transition-colors duration-200">
-                <GiWoodBeam className="text-brand-sand text-lg" />
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="text-brand-dark font-medium text-base tracking-tight">
-                  Pallets<span className="text-accent-gold">JJ</span>
-                </span>
-                <span className="text-brand-tan text-[9px] font-normal tracking-[0.2em] uppercase hidden sm:block">
-                  Tigre · Buenos Aires
-                </span>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Wood Pallet"
+                width={36}
+                height={36}
+                className="object-contain"
+              />
+              <span
+                className="font-serif italic text-xl leading-none"
+                style={{
+                  background: 'linear-gradient(135deg, #C9A84C 0%, #B8814A 50%, #8B5E3C 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                Wood Pallet
+              </span>
             </Link>
 
             <div className="hidden md:flex items-center gap-0.5 ml-auto">
