@@ -19,8 +19,13 @@ function validarEmail(email: string): boolean {
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
   const origin = req.headers.get('origin') ?? ''
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
-  if (origin && !origin.startsWith(siteUrl.replace(/\/$/, ''))) {
+  const allowed = [
+    process.env.NEXT_PUBLIC_SITE_URL,
+    'http://localhost:3000',
+    'https://wood-pallet.vercel.app',
+  ].filter(Boolean).map((u) => u!.replace(/\/$/, ''))
+
+  if (origin && !allowed.some((u) => origin.startsWith(u))) {
     return NextResponse.json({ success: false, error: 'Origen no permitido' }, { status: 403 })
   }
 

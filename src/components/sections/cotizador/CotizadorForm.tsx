@@ -134,10 +134,9 @@ export default function CotizadorForm() {
     setEnviando(true)
     setErrores({})
     try {
-      const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
       const res = await fetch('/api/cotizador', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Origin: siteUrl },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, cantidad: Number(form.cantidad) }),
       })
       const data = await res.json()
