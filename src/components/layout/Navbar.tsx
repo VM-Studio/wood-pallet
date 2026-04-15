@@ -50,6 +50,7 @@ export default function Navbar() {
                 width={36}
                 height={36}
                 className="object-contain"
+                style={{ width: 36, height: 36, minWidth: 36 }}
               />
               <span
                 className="font-serif italic text-xl leading-none"
