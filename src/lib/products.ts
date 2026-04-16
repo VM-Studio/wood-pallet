@@ -16,7 +16,7 @@ export interface Product {
 export const PRODUCTS: Product[] = [
   {
     id: 'seminuevo-reforzado',
-    nombre: 'Pallet Normalizado',
+    nombre: 'Pallet Normalizado Semi Nuevo',
     medida: '1200 × 1000 mm',
     carga: '1.500 kg',
     uso: 'Uso general',
@@ -29,7 +29,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'seminuevo-descartable',
-    nombre: 'Pallet Seminuevo Descartable',
+    nombre: 'Pallet Descartable Semi Nuevo',
     medida: '1200 × 1000 mm',
     carga: '1.000 kg',
     uso: 'Uso general',
