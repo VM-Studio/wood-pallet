@@ -1,10 +1,11 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Image from 'next/image'
 import { FaWhatsapp, FaRuler, FaWeightHanging } from 'react-icons/fa'
 import { PRODUCTS, type Product } from '@/lib/products'
+import ModelViewer3D from './ModelViewer3D'
 
 const EASE = 'easeOut'
 
@@ -27,6 +28,8 @@ function ProductCard({ product, delay, inView }: {
 }) {
   const { nombre, medida, carga, uso, descripcion, imagen, wa, badge } = product
   const isDestacado = badge === 'Más vendido'
+  const [modelOpen, setModelOpen] = useState(false)
+  const isEuro = product.id === 'euro'
 
   return (
     <motion.article
@@ -88,6 +91,25 @@ function ProductCard({ product, delay, inView }: {
 
         {/* Separador */}
         <span className="h-px bg-brand-sand block mt-2" />
+
+        {/* Botón 3D solo para Pallet Euro */}
+        {isEuro && (
+          <>
+            <button
+              onClick={() => setModelOpen(true)}
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-medium uppercase tracking-wide border border-accent-gold text-accent-gold hover:bg-accent-gold hover:text-brand-dark transition-all duration-200"
+            >
+              <span>⬡</span>
+              Ver modelo 3D
+            </button>
+            <ModelViewer3D
+              open={modelOpen}
+              onClose={() => setModelOpen(false)}
+              src="/palleteuro.glb"
+              nombre={nombre}
+            />
+          </>
+        )}
 
         {/* CTA */}
         <a
