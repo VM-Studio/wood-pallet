@@ -29,7 +29,11 @@ function ProductCard({ product, delay, inView }: {
   const { nombre, medida, carga, uso, descripcion, imagen, wa, badge } = product
   const isDestacado = badge === 'Más vendido'
   const [modelOpen, setModelOpen] = useState(false)
-  const isEuro = product.id === 'euro'
+  const MODEL_MAP: Record<string, string> = {
+    euro: '/palleteuro.glb',
+    tirante: '/palletcontirante.glb',
+  }
+  const modelSrc = MODEL_MAP[product.id]
 
   return (
     <motion.article
@@ -92,8 +96,8 @@ function ProductCard({ product, delay, inView }: {
         {/* Separador */}
         <span className="h-px bg-brand-sand block mt-2" />
 
-        {/* Botón 3D solo para Pallet Euro */}
-        {isEuro && (
+        {/* Botón 3D — productos con modelo */}
+        {modelSrc && (
           <>
             <button
               onClick={() => setModelOpen(true)}
@@ -105,7 +109,7 @@ function ProductCard({ product, delay, inView }: {
             <ModelViewer3D
               open={modelOpen}
               onClose={() => setModelOpen(false)}
-              src="/palleteuro.glb"
+              src={modelSrc}
               nombre={nombre}
             />
           </>
