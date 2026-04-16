@@ -11,6 +11,7 @@ export interface Product {
   wa: string
   badge: string | null
   nimf: boolean | 'consultar'
+  imgZoom?: number
 }
 
 export const PRODUCTS: Product[] = [
@@ -91,6 +92,7 @@ export const PRODUCTS: Product[] = [
     wa: WHATSAPP_LINKS.tirante,
     badge: 'Industrial',
     nimf: true,
+    imgZoom: 1.5,
   },
   {
     id: 'doble-faz',
@@ -104,6 +106,7 @@ export const PRODUCTS: Product[] = [
     wa: WHATSAPP_LINKS.dobleFaz,
     badge: 'Alta resistencia',
     nimf: true,
+    imgZoom: 1.5,
   },
   {
     id: 'especiales',

@@ -26,7 +26,7 @@ function ProductCard({ product, delay, inView }: {
   delay: number
   inView: boolean
 }) {
-  const { nombre, medida, carga, uso, descripcion, imagen, wa, badge } = product
+  const { nombre, medida, carga, uso, descripcion, imagen, wa, badge, imgZoom } = product
   const isDestacado = badge === 'Más vendido'
   const [modelOpen, setModelOpen] = useState(false)
   const MODEL_MAP: Record<string, string> = {
@@ -54,7 +54,8 @@ function ProductCard({ product, delay, inView }: {
           alt={nombre}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-contain p-1 group-hover:scale-[1.02] transition-transform duration-300"
+          className="object-contain p-1 transition-transform duration-300"
+          style={{ transform: `scale(${imgZoom ?? 1}) `, transformOrigin: 'center' }}
         />
 
         {/* Badge */}
