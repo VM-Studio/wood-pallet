@@ -86,7 +86,7 @@ function ProductCard({ producto, delay, inView }: { producto: ProductoPreview; d
           fill
           sizes="(max-width: 640px) 100vw, 50vw"
           priority
-          className="object-contain object-center p-2 group-hover:scale-105 transition-transform duration-500"
+          className="object-contain object-center p-0 group-hover:scale-105 transition-transform duration-500"
         />
       </div>
 
