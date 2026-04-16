@@ -35,7 +35,7 @@ export const PRODUCTS: Product[] = [
     uso: 'Uso general',
     descripcion:
       'Pallet seminuevo económico para un solo viaje o uso de corto plazo. Capacidad de carga de hasta 1.000 kg. La opción más accesible para envíos, exportación liviana y distribución puntual.',
-    imagen: '/palletseminuevo.png',
+    imagen: '/palletdescartableseminuevo.png',
     wa: WHATSAPP_LINKS.seminuevoDescartable,
     badge: 'Económico',
     nimf: 'consultar',

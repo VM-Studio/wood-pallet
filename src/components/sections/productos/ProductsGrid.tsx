@@ -32,6 +32,7 @@ function ProductCard({ product, delay, inView }: {
   const MODEL_MAP: Record<string, string> = {
     euro: '/palleteuro.glb',
     tirante: '/palletcontirante.glb',
+    'seminuevo-descartable': '/palletdescartableseminuevo.glb',
   }
   const modelSrc = MODEL_MAP[product.id]
 
