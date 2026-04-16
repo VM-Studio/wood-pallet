@@ -17,6 +17,8 @@ export const WHATSAPP_LINKS = {
   general:              `https://api.whatsapp.com/send/?phone=${EMPRESA.whatsapp.replace('+','')}&text=Buenas,%20estoy%20buscando%20una%20cotizacion%20de%20Pallets.&type=phone_number&app_absent=0`,
   seminuevoReforzado:   `https://api.whatsapp.com/send/?phone=${EMPRESA.whatsapp.replace('+','')}&text=Buenas,%20estoy%20buscando%20una%20cotizacion%20de%20Pallets%20Seminuevos%20Reforzados.&type=phone_number&app_absent=0`,
   seminuevoDescartable: `https://api.whatsapp.com/send/?phone=${EMPRESA.whatsapp.replace('+','')}&text=Buenas,%20estoy%20buscando%20una%20cotizacion%20de%20Pallets%20Seminuevos%20Descartables.&type=phone_number&app_absent=0`,
+  normalizadoNuevo:     `https://api.whatsapp.com/send/?phone=${EMPRESA.whatsapp.replace('+','')}&text=Buenas,%20estoy%20buscando%20una%20cotizacion%20de%20Pallets%20Normalizados%20Nuevos.&type=phone_number&app_absent=0`,
+  descartableNuevo:     `https://api.whatsapp.com/send/?phone=${EMPRESA.whatsapp.replace('+','')}&text=Buenas,%20estoy%20buscando%20una%20cotizacion%20de%20Pallets%20Descartables%20Nuevos.&type=phone_number&app_absent=0`,
   euro:                 `https://api.whatsapp.com/send/?phone=${EMPRESA.whatsapp.replace('+','')}&text=Buenas,%20estoy%20buscando%20una%20cotizacion%20de%20Pallets%20Euros.&type=phone_number&app_absent=0`,
   estandar:   `https://api.whatsapp.com/send/?phone=${EMPRESA.whatsapp.replace('+','')}&text=Buenas,%20estoy%20buscando%20una%20cotizacion%20de%20Pallets%20Estandar.&type=phone_number&app_absent=0`,
   liviano:    `https://api.whatsapp.com/send/?phone=${EMPRESA.whatsapp.replace('+','')}&text=Buenas,%20estoy%20buscando%20una%20cotizacion%20de%20Pallets%20Estandar%20Liviano.&type=phone_number&app_absent=0`,

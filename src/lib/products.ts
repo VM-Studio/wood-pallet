@@ -16,13 +16,13 @@ export interface Product {
 export const PRODUCTS: Product[] = [
   {
     id: 'seminuevo-reforzado',
-    nombre: 'Pallet Seminuevo Reforzado',
+    nombre: 'Pallet Normalizado',
     medida: '1200 × 1000 mm',
     carga: '1.500 kg',
     uso: 'Uso general',
     descripcion:
       'Pallet seminuevo de alta resistencia, reforzado con tablas extras para soportar cargas de hasta 1.500 kg. Ideal para operaciones de logística interna donde se necesita durabilidad a menor costo que el nuevo.',
-    imagen: '/palletseminuevo.png',
+    imagen: '/palletnormalizadoseminuevo.png',
     wa: WHATSAPP_LINKS.seminuevoReforzado,
     badge: 'Más vendido',
     nimf: 'consultar',
@@ -39,6 +39,32 @@ export const PRODUCTS: Product[] = [
     wa: WHATSAPP_LINKS.seminuevoDescartable,
     badge: 'Económico',
     nimf: 'consultar',
+  },
+  {
+    id: 'normalizado-nuevo',
+    nombre: 'Pallet Normalizado Nuevo',
+    medida: '1200 × 1000 mm',
+    carga: '1.500 kg',
+    uso: 'Uso general',
+    descripcion:
+      'Pallet nuevo normalizado, fabricado con madera de primera calidad. Alta resistencia y durabilidad para operaciones de logística que requieren pallets sin uso previo.',
+    imagen: '/palletnormalizadonuevo.png',
+    wa: WHATSAPP_LINKS.normalizadoNuevo,
+    badge: 'Nuevo',
+    nimf: true,
+  },
+  {
+    id: 'descartable-nuevo',
+    nombre: 'Pallet Descartable Nuevo',
+    medida: '1200 × 1000 mm',
+    carga: '1.000 kg',
+    uso: 'Uso general',
+    descripcion:
+      'Pallet nuevo descartable ideal para un solo viaje o exportación liviana. Construido con madera nueva para garantizar higiene y presentación en cada envío.',
+    imagen: '/palletdescartablenuevo.png',
+    wa: WHATSAPP_LINKS.descartableNuevo,
+    badge: 'Nuevo',
+    nimf: true,
   },
   {
     id: 'euro',
@@ -87,7 +113,7 @@ export const PRODUCTS: Product[] = [
     uso: 'Industria cementera',
     descripcion:
       'Diseñado específicamente para la industria cementera y construcción. La viga central (tirante) permite la manipulación con zorras y montacargas en condiciones de peso extremo.',
-    imagen: '/tirante.png',
+    imagen: '/palletcontirante.png',
     wa: WHATSAPP_LINKS.tirante,
     badge: 'Industrial',
     nimf: true,

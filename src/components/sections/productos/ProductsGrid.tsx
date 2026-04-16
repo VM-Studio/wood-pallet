@@ -33,6 +33,10 @@ function ProductCard({ product, delay, inView }: {
     euro: '/palleteuro.glb',
     tirante: '/palletcontirante.glb',
     'seminuevo-descartable': '/palletdescartableseminuevo.glb',
+    'doble-faz': '/palletdoblefaz.glb',
+    'seminuevo-reforzado': '/palletnormalizadoseminuevo.glb',
+    'normalizado-nuevo': '/palletnormalizadonuevo.glb',
+    'descartable-nuevo': '/palletdescartablenuevo.glb',
   }
   const modelSrc = MODEL_MAP[product.id]
 
