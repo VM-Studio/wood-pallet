@@ -97,7 +97,7 @@ function ProductCard({ product, delay, inView }: {
           <>
             <button
               onClick={() => setModelOpen(true)}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-medium uppercase tracking-wide border border-accent-gold text-accent-gold hover:bg-accent-gold hover:text-brand-dark transition-all duration-200"
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-medium uppercase tracking-wide bg-accent-gold text-brand-dark hover:brightness-110 transition-all duration-200"
             >
               <span>⬡</span>
               Ver modelo 3D
