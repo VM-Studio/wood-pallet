@@ -54,8 +54,7 @@ function ProductCard({ product, delay, inView }: {
           alt={nombre}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-contain p-1 transition-transform duration-300"
-          style={{ transform: `scale(${imgZoom ?? 1}) `, transformOrigin: 'center' }}
+          className={imgZoom ? 'object-cover transition-transform duration-300' : 'object-contain p-1 transition-transform duration-300'}
         />
 
         {/* Badge */}

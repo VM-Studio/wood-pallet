@@ -92,7 +92,7 @@ export const PRODUCTS: Product[] = [
     wa: WHATSAPP_LINKS.tirante,
     badge: 'Industrial',
     nimf: true,
-    imgZoom: 1.5,
+    imgZoom: 2,
   },
   {
     id: 'doble-faz',
@@ -106,7 +106,7 @@ export const PRODUCTS: Product[] = [
     wa: WHATSAPP_LINKS.dobleFaz,
     badge: 'Alta resistencia',
     nimf: true,
-    imgZoom: 1.5,
+    imgZoom: 2,
   },
   {
     id: 'especiales',
