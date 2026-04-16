@@ -80,32 +80,6 @@ export const PRODUCTS: Product[] = [
     nimf: true,
   },
   {
-    id: 'estandar',
-    nombre: 'Pallet Estándar',
-    medida: '1200 × 1000 mm',
-    carga: '1.800 kg',
-    uso: 'Consumo masivo',
-    descripcion:
-      'El pallet normalizado tipo ARLOG, preferido por empresas argentinas. Versátil y resistente, ideal para almacenes, distribución y transporte pesado.',
-    imagen: '/palletstandard.png',
-    wa: WHATSAPP_LINKS.estandar,
-    badge: 'Tipo ARLOG',
-    nimf: true,
-  },
-  {
-    id: 'liviano',
-    nombre: 'Pallet Estándar Liviano',
-    medida: '1200 × 1000 mm',
-    carga: '1.000 kg',
-    uso: 'Consumo masivo',
-    descripcion:
-      'Versión optimizada del estándar con menor peso propio. Ideal para mercadería liviana donde se prioriza la reducción de costo por unidad sin sacrificar funcionalidad.',
-    imagen: '/palletstandard.png',
-    wa: WHATSAPP_LINKS.liviano,
-    badge: null,
-    nimf: true,
-  },
-  {
     id: 'tirante',
     nombre: 'Pallet con Tirante',
     medida: 'Personalizada',

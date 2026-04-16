@@ -12,45 +12,46 @@ const EASE = 'easeOut'
 
 const MODEL_MAP: Record<string, string> = {
   euro: '/palleteuro.glb',
-  tirante: '/palletcontirante.glb',
+  'normalizado-nuevo': '/palletnormalizadonuevo.glb',
+  'seminuevo-reforzado': '/palletnormalizadoseminuevo.glb',
 }
 
 const PRODUCTOS = [
   {
+    id: 'normalizado-nuevo',
+    nombre: 'Pallet Normalizado Nuevo',
+    medida: '1200×1000mm',
+    carga: '1.500 kg',
+    uso: 'Uso general',
+    img: 'palletnormalizadonuevo.png',
+    waLink: WHATSAPP_LINKS.normalizadoNuevo,
+  },
+  {
+    id: 'seminuevo-reforzado',
+    nombre: 'Pallet Normalizado Seminuevo',
+    medida: '1200×1000mm',
+    carga: '1.500 kg',
+    uso: 'Uso general',
+    img: 'palletnormalizadoseminuevo.png',
+    waLink: WHATSAPP_LINKS.seminuevoReforzado,
+  },
+  {
     id: 'euro',
     nombre: 'Pallet Euro',
     medida: '1200×800mm',
-    carga: '1.300 kg',
+    carga: '1.800 kg',
     uso: 'Consumo masivo',
     img: 'palleteuro.png',
     waLink: WHATSAPP_LINKS.euro,
   },
   {
-    id: 'estandar',
-    nombre: 'Pallet Estándar',
-    medida: '1200×1000mm',
-    carga: '1.800 kg',
-    uso: 'Consumo masivo',
-    img: 'palletstandard.png',
-    waLink: WHATSAPP_LINKS.estandar,
-  },
-  {
-    id: 'dobleFaz',
-    nombre: 'Pallet Doble Faz',
-    medida: '1200×1000mm',
-    carga: '+2.000 kg',
-    uso: 'Reforzado',
-    img: 'palletdoblefaz.png',
-    waLink: WHATSAPP_LINKS.dobleFaz,
-  },
-  {
-    id: 'tirante',
-    nombre: 'Pallets con Tirante',
-    medida: 'Medida personalizada',
-    carga: 'Uso cementero',
-    uso: 'Industrial',
-    img: 'palletcontirante.png',
-    waLink: WHATSAPP_LINKS.tirante,
+    id: 'especiales',
+    nombre: 'Pallets a Medida',
+    medida: 'A pedido',
+    carga: 'Según diseño',
+    uso: 'Uso general',
+    img: 'amedida.png',
+    waLink: WHATSAPP_LINKS.especiales,
   },
 ]
 
