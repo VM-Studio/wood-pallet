@@ -27,13 +27,13 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.madererajj.com'),
   title: {
-    default: 'Wood Pallet — Fabricación y Venta de Pallets de Madera | Tigre, Buenos Aires',
+    default: 'Wood Pallet — Pallets de Madera Nuevos y Seminuevos en Tigre, Buenos Aires',
     template: '%s | Wood Pallet',
   },
   description:
-    'Fabricamos y vendemos pallets de madera nuevos y usados en Tigre, Buenos Aires. ' +
-    'Más de 10 años de trayectoria. Pallets Euro, Estándar, Doble Faz y medidas especiales. ' +
-    'Tratamiento NIMF-15 para exportación. Stock permanente. Solo venta mayorista.',
+    'Wood Pallet fabrica y vende pallets de madera nuevos y seminuevos en Tigre, Buenos Aires. ' +
+    'Más de 20 años de trayectoria — pallets Euro, normalizados, doble faz y medidas a pedido. ' +
+    'Tratamiento NIMF‑15 para exportación, stock permanente y venta mayorista. Contacto y cotizaciones rápidas.',
   keywords: [
     'pallets madera', 'pallets Tigre', 'pallets Buenos Aires',
     'pallets exportación', 'NIMF 15', 'pallets euro', 'pallets estandar',
@@ -44,15 +44,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_AR',
-    url: 'https://www.madererajj.com',
+    url: 'https://www.woodpallet.com',
     siteName: 'Wood Pallet',
     title: 'Wood Pallet — Líderes en Pallets de Madera',
     description:
       'Fabricación y venta de pallets de madera en Tigre, Buenos Aires. ' +
-      'Más de 10 años en el mercado. Tratamiento NIMF-15. Stock permanente.',
+      'Más de 20 años en el mercado. Tratamiento NIMF‑15. Stock permanente y medidas a pedido.',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/logo.webp',
         width: 1200,
         height: 630,
         alt: 'Wood Pallet — Pallets de Madera Tigre Buenos Aires',
@@ -62,8 +62,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Wood Pallet — Líderes en Pallets de Madera',
-    description: 'Fabricación y venta de pallets de madera en Tigre, Buenos Aires.',
-    images: ['/images/og-image.jpg'],
+    description: 'Fabricación y venta de pallets de madera en Tigre, Buenos Aires. NIMF‑15, stock permanente.',
+    images: ['/logo.webp'],
   },
   robots: {
     index: true,

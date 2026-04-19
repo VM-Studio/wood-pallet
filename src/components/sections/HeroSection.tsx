@@ -43,15 +43,17 @@ export default function HeroSection() {
 
             {/* H1 */}
             <FadeUp delay={0.08} inView={inView}>
-              <h1
-                className="font-light text-brand-dark leading-tight text-[2.6rem] md:text-[clamp(2rem,5vw,5.5rem)]"
-                style={{ letterSpacing: '-0.03em', overflowWrap: 'break-word' }}
-              >
-                Líderes en{' '}
-                <em className="em-gradient">pallets</em>{' '}
-                de{' '}
-                <em className="em-gradient">madera</em>
-              </h1>
+                <h1
+                  className="font-light text-brand-dark leading-tight text-[2.6rem] md:text-[clamp(2rem,5vw,5.5rem)]"
+                  style={{ letterSpacing: '-0.03em', overflowWrap: 'break-word' }}
+                >
+                  Pallets de madera nuevos y seminuevos —{' '}
+                  <em className="em-gradient">Wood Pallet</em>
+                </h1>
+
+                <h2 className="text-base text-brand-dark/70 font-medium mt-1">
+                  Venta mayorista y para exportación · Tratamiento <strong>NIMF‑15</strong> · Stock permanente
+                </h2>
             </FadeUp>
 
             {/* Línea dorada */}
