@@ -50,10 +50,6 @@ export default function HeroSection() {
                   Pallets de madera nuevos y seminuevos —{' '}
                   <em className="em-gradient">Wood Pallet</em>
                 </h1>
-
-                <h2 className="text-base text-brand-dark/70 font-medium mt-1">
-                  Venta mayorista y para exportación · Tratamiento <strong>NIMF‑15</strong> · Stock permanente
-                </h2>
             </FadeUp>
 
             {/* Línea dorada */}
