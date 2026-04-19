@@ -9,7 +9,7 @@ export const EMPRESA = {
   instagram:   'https://instagram.com/madererajj',
   facebook:    'https://www.facebook.com/profile.php?id=100068290073960',
   maps:        'https://www.google.com/maps/place/Benito+Lynch+%26+Don+Orione,+Los+Troncos+del+Talar,+Provincia+de+Buenos+Aires/@-34.4412257,-58.5950847,17z',
-  anios:       '+10 años',
+  anios:       '+20 años',
   fundacion:   'Empresa familiar',
 }
 

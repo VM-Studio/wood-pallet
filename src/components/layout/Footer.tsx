@@ -1,6 +1,6 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { FaWhatsapp, FaInstagram, FaFacebook, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
-import { GiWoodBeam } from 'react-icons/gi'
 import { NAV_LINKS, EMPRESA, WHATSAPP_LINKS } from '@/lib/constants'
 
 export default function Footer() {
@@ -25,22 +25,35 @@ export default function Footer() {
 
           {/* Columna 1 — Marca */}
           <div className="flex flex-col gap-5">
-            <Link href="/" className="flex items-center gap-2.5 group w-fit">
-              <div className="w-10 h-10 bg-brand-brown flex items-center justify-center group-hover:bg-brand-tan transition-colors">
-                <GiWoodBeam className="text-brand-sand text-xl" />
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="text-brand-cream font-medium text-lg tracking-tight">
-                  Pallets<span className="text-accent-gold">JJ</span>
-                </span>
-                <span className="text-brand-tan text-[9px] tracking-[0.2em] uppercase">
-                  Tigre · Buenos Aires
-                </span>
-              </div>
-            </Link>
+              <Link href="/" className="flex items-center gap-2.5 group w-fit">
+                <Image
+                  src="/logo.webp"
+                  alt="Wood Pallet"
+                  width={36}
+                  height={36}
+                  className="object-contain"
+                  style={{ width: 36, height: 36, minWidth: 36 }}
+                />
+                <div className="flex flex-col leading-none">
+                  <span
+                    className="font-serif italic text-lg leading-none"
+                    style={{
+                      background: 'linear-gradient(135deg, #C9A84C 0%, #B8814A 50%, #8B5E3C 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                    }}
+                  >
+                    Wood Pallet
+                  </span>
+                  <span className="text-brand-tan text-[9px] tracking-[0.2em] uppercase">
+                    Tigre · Buenos Aires
+                  </span>
+                </div>
+              </Link>
 
             <p className="text-white/80 text-sm leading-relaxed max-w-xs">
-              Empresa familiar con más de 10 años de trayectoria en la fabricación
+              Empresa familiar con más de 20 años de trayectoria en la fabricación
               y comercialización de pallets de madera.
             </p>
 
