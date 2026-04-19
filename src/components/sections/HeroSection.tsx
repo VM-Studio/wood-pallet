@@ -68,10 +68,8 @@ export default function HeroSection() {
             {/* Párrafo */}
             <FadeUp delay={0.32} inView={inView}>
               <p className="text-brand-dark/60 leading-relaxed text-sm sm:text-base sm:max-w-md">
-                Venta de pallets de madera nuevos y usados para uso local y exportación.{' '}
-                <span className="font-medium text-brand-dark">Más de 20 años</span> de
-                trayectoria familiar, stock permanente y tratamiento{' '}
-                <span className="font-medium text-brand-dark">NIMF-15</span> certificado.
+                Venta de pallets nuevos y normalizados, descartables. <span className="font-medium text-brand-dark">Stock ilimitado</span>, despacho rápido y tratamiento{' '}
+                <span className="font-medium text-brand-dark">NIMF‑15</span> para exportación.
               </p>
             </FadeUp>
 

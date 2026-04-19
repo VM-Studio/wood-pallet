@@ -25,15 +25,14 @@ const geistMono = localFont({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.madererajj.com'),
+  metadataBase: new URL('https://www.woodpallet.com'),
   title: {
-    default: 'Wood Pallet — Pallets de Madera Nuevos y Seminuevos en Tigre, Buenos Aires',
+    default: 'Líderes en fabricación y venta de pallets',
     template: '%s | Wood Pallet',
   },
   description:
-    'Wood Pallet fabrica y vende pallets de madera nuevos y seminuevos en Tigre, Buenos Aires. ' +
-    'Más de 20 años de trayectoria — pallets Euro, normalizados, doble faz y medidas a pedido. ' +
-    'Tratamiento NIMF‑15 para exportación, stock permanente y venta mayorista. Contacto y cotizaciones rápidas.',
+    'Venta de pallets nuevos y normalizados, descartables. Stock ilimitado y despacho rápido. ' +
+    'Tratamiento NIMF‑15 para exportación. Venta mayorista y minorista. Cotizaciones ágiles y entrega programada.',
   keywords: [
     'pallets madera', 'pallets Tigre', 'pallets Buenos Aires',
     'pallets exportación', 'NIMF 15', 'pallets euro', 'pallets estandar',
@@ -48,8 +47,8 @@ export const metadata: Metadata = {
     siteName: 'Wood Pallet',
     title: 'Wood Pallet — Líderes en Pallets de Madera',
     description:
-      'Fabricación y venta de pallets de madera en Tigre, Buenos Aires. ' +
-      'Más de 20 años en el mercado. Tratamiento NIMF‑15. Stock permanente y medidas a pedido.',
+      'Venta de pallets nuevos y normalizados, descartables. Stock ilimitado y despacho rápido. ' +
+      'Tratamiento NIMF‑15 para exportación. Cotizaciones ágiles.',
     images: [
       {
         url: '/logo.webp',
@@ -62,7 +61,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Wood Pallet — Líderes en Pallets de Madera',
-    description: 'Fabricación y venta de pallets de madera en Tigre, Buenos Aires. NIMF‑15, stock permanente.',
+  description: 'Venta de pallets nuevos y normalizados, descartables. Stock ilimitado y despacho rápido.',
     images: ['/logo.webp'],
   },
   robots: {

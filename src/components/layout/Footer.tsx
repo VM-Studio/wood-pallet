@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { FaWhatsapp, FaInstagram, FaFacebook, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaWhatsapp, FaInstagram, FaFacebook, FaPhone, FaEnvelope } from 'react-icons/fa'
 import { NAV_LINKS, EMPRESA, WHATSAPP_LINKS } from '@/lib/constants'
 
 export default function Footer() {
@@ -34,22 +34,19 @@ export default function Footer() {
                   className="object-contain"
                   style={{ width: 36, height: 36, minWidth: 36 }}
                 />
-                <div className="flex flex-col leading-none">
-                  <span
-                    className="font-serif italic text-lg leading-none"
-                    style={{
-                      background: 'linear-gradient(135deg, #C9A84C 0%, #B8814A 50%, #8B5E3C 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                    }}
-                  >
-                    Wood Pallet
-                  </span>
-                  <span className="text-brand-tan text-[9px] tracking-[0.2em] uppercase">
-                    Tigre · Buenos Aires
-                  </span>
-                </div>
+                  <div className="flex flex-col leading-none">
+                    <span
+                      className="font-serif italic text-lg leading-none"
+                      style={{
+                        background: 'linear-gradient(135deg, #C9A84C 0%, #B8814A 50%, #8B5E3C 100%)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text',
+                      }}
+                    >
+                      Wood Pallet
+                    </span>
+                  </div>
               </Link>
 
             <p className="text-white/80 text-sm leading-relaxed max-w-xs">
@@ -126,16 +123,7 @@ export default function Footer() {
                 </div>
               </a>
 
-              <a href={EMPRESA.maps} target="_blank" rel="noopener noreferrer"
-                className="flex items-start gap-3 text-sm text-white/80 hover:text-accent-gold transition-colors group">
-                <div className="w-7 h-7 bg-white/5 group-hover:bg-accent-gold/10 flex items-center justify-center shrink-0 mt-0.5 transition-colors">
-                  <FaMapMarkerAlt className="text-xs" />
-                </div>
-                <div>
-                  <p className="text-brand-cream text-[9px] uppercase tracking-wider mb-0.5">Dirección</p>
-                  <p className="leading-relaxed">{EMPRESA.direccion}</p>
-                </div>
-              </a>
+              {/* Dirección removida por preferencia del cliente (no mostrar zona) */}
             </div>
           </div>
 
