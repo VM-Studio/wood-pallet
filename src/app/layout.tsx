@@ -32,11 +32,11 @@ export const metadata: Metadata = {
   },
   description:
     'Venta de pallets nuevos y normalizados, descartables. Stock ilimitado y despacho rápido. ' +
-    'Tratamiento NIMF‑15 para exportación. Venta mayorista y minorista. Cotizaciones ágiles y entrega programada.',
+    'Tratamiento NIMF‑15 para exportación. Venta mayorista. Cotizaciones ágiles y entrega programada.',
   keywords: [
-    'pallets madera', 'pallets Tigre', 'pallets Buenos Aires',
+    'pallets madera', 'pallets Buenos Aires',
     'pallets exportación', 'NIMF 15', 'pallets euro', 'pallets estandar',
-    'pallets doble faz', 'pallet carton', 'maderera JJ', 'pallets mayorista',
+    'pallets doble faz', 'pallet carton', 'pallets mayorista',
   ],
   authors: [{ name: 'Wood Pallet' }],
   creator: 'Wood Pallet',
