@@ -23,6 +23,10 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     process.env.NEXT_PUBLIC_SITE_URL,
     'http://localhost:3000',
     'https://wood-pallet.vercel.app',
+    'https://www.woodpallets.com.ar',
+    'https://woodpallets.com.ar',
+    'https://www.woodpallet.com',
+    'https://woodpallet.com',
   ].filter(Boolean).map((u) => u!.replace(/\/$/, ''))
 
   if (origin && !allowed.some((u) => origin.startsWith(u))) {

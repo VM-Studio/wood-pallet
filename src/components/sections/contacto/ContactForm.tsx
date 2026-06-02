@@ -47,7 +47,6 @@ function validate(data: FormState): FormErrors {
   if (!validateEmail(data.email.trim())) errors.email = 'Ingresá un email válido.'
   if (data.telefono.replace(/\D/g, '').length < 8) errors.telefono = 'Ingresá un teléfono válido (mínimo 8 dígitos).'
   if (!data.tipo) errors.tipo = 'Seleccioná el tipo de pallet.'
-  if (data.mensaje.trim().length < 20) errors.mensaje = 'El mensaje debe tener al menos 20 caracteres.'
   return errors
 }
 
