@@ -133,11 +133,21 @@ export default function CotizadorForm() {
     if (!validarPaso()) return
     setEnviando(true)
     setErrores({})
+
+    const payload = JSON.stringify({ ...form, cantidad: Number(form.cantidad) })
+
+    // Llamada secundaria al sistema interno — no bloqueante, errores silenciosos
+    fetch('/api/cotizador-sistema', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: payload,
+    }).catch((err) => console.error('[cotizador-sistema] Error de red:', err))
+
     try {
       const res = await fetch('/api/cotizador', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, cantidad: Number(form.cantidad) }),
+        body: payload,
       })
       const data = await res.json()
       if (data.success) {
