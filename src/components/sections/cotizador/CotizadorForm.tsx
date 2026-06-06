@@ -153,29 +153,32 @@ export default function CotizadorForm() {
 
     const payload = JSON.stringify({ ...form, cantidad: Number(form.cantidad) })
 
-    // Backup por Resend (fire-and-forget) — el backend ya envía email, esto es redundancia
-    fetch('/api/cotizador', {
+    // Sistema interno — fire-and-forget, nunca bloquea ni muestra error al usuario
+    fetch('/api/cotizador-sistema', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: payload,
-    }).catch((err) => console.error('[cotizador email backup]', err))
+    })
+      .then((res) => { if (res.ok) localStorage.removeItem(STORAGE_KEY) })
+      .catch((err) => {
+        console.error('[cotizador-sistema] Error de red:', err)
+        localStorage.setItem(STORAGE_KEY, payload)
+      })
 
+    // Email vía Resend — llamada primaria que determina éxito/error para el usuario
     try {
-      const res = await fetch('/api/cotizador-sistema', {
+      const res = await fetch('/api/cotizador', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: payload,
       })
       const data = await res.json()
-      if (res.ok && data.success !== false) {
-        localStorage.removeItem(STORAGE_KEY)
+      if (data.success) {
         router.push('/agradecimiento')
       } else {
-        localStorage.setItem(STORAGE_KEY, payload)
-        setErrores({ general: data.error ?? 'Hubo un problema al enviar tu consulta. Intentá de nuevo o contactanos por WhatsApp.' })
+        setErrores({ general: data.error ?? 'Error al enviar. Intentá de nuevo.' })
       }
     } catch {
-      localStorage.setItem(STORAGE_KEY, payload)
       setErrores({ general: 'Error de red. Verificá tu conexión e intentá de nuevo.' })
     } finally {
       setEnviando(false)
