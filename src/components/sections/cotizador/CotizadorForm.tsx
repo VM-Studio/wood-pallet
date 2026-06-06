@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import StepIndicator from './StepIndicator'
 import SuccessState from './SuccessState'
@@ -8,6 +9,8 @@ import {
   TIPOS_PALLET,
   type DatosCotizacion,
 } from '@/lib/cotizadorConfig'
+
+const STORAGE_KEY = 'wp_cotizador_pending'
 
 type FormData = Partial<DatosCotizacion>
 
@@ -75,12 +78,26 @@ function SelectCard({ selected, onClick, children, className = '' }: SelectCardP
 }
 
 export default function CotizadorForm() {
+  const router = useRouter()
   const [paso, setPaso] = useState(1)
   const [dir, setDir] = useState<1 | -1>(1)
   const [form, setForm] = useState<FormData>({})
   const [errores, setErrores] = useState<Partial<Record<keyof DatosCotizacion | 'general', string>>>({})
   const [enviando, setEnviando] = useState(false)
   const [exito, setExito] = useState(false)
+
+  // Reintentar envíos fallidos al recargar la página
+  useEffect(() => {
+    const pending = localStorage.getItem(STORAGE_KEY)
+    if (!pending) return
+    fetch('/api/cotizador-sistema', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: pending,
+    })
+      .then((res) => { if (res.ok) localStorage.removeItem(STORAGE_KEY) })
+      .catch(() => {})
+  }, [])
 
   const set = useCallback((campo: keyof DatosCotizacion, valor: unknown) => {
     setForm((prev) => ({ ...prev, [campo]: valor }))
@@ -136,26 +153,29 @@ export default function CotizadorForm() {
 
     const payload = JSON.stringify({ ...form, cantidad: Number(form.cantidad) })
 
-    // Llamada secundaria al sistema interno — no bloqueante, errores silenciosos
-    fetch('/api/cotizador-sistema', {
+    // Backup por Resend (fire-and-forget) — el backend ya envía email, esto es redundancia
+    fetch('/api/cotizador', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: payload,
-    }).catch((err) => console.error('[cotizador-sistema] Error de red:', err))
+    }).catch((err) => console.error('[cotizador email backup]', err))
 
     try {
-      const res = await fetch('/api/cotizador', {
+      const res = await fetch('/api/cotizador-sistema', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: payload,
       })
       const data = await res.json()
-      if (data.success) {
-        setExito(true)
+      if (res.ok && data.success !== false) {
+        localStorage.removeItem(STORAGE_KEY)
+        router.push('/agradecimiento')
       } else {
-        setErrores({ general: data.error ?? 'Error al enviar. Intentá de nuevo.' })
+        localStorage.setItem(STORAGE_KEY, payload)
+        setErrores({ general: data.error ?? 'Hubo un problema al enviar tu consulta. Intentá de nuevo o contactanos por WhatsApp.' })
       }
     } catch {
+      localStorage.setItem(STORAGE_KEY, payload)
       setErrores({ general: 'Error de red. Verificá tu conexión e intentá de nuevo.' })
     } finally {
       setEnviando(false)
