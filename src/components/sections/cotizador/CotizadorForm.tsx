@@ -90,9 +90,12 @@ export default function CotizadorForm() {
   useEffect(() => {
     const pending = localStorage.getItem(STORAGE_KEY)
     if (!pending) return
-    fetch('/api/cotizador-sistema', {
+    fetch('https://wood-pallet-manager-production.up.railway.app/api/cotizaciones-web/nueva', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': 'wp_prod_k8x2mQnR7tLvP3aY',
+      },
       body: pending,
     })
       .then((res) => { if (res.ok) localStorage.removeItem(STORAGE_KEY) })
@@ -153,10 +156,13 @@ export default function CotizadorForm() {
 
     const payload = JSON.stringify({ ...form, cantidad: Number(form.cantidad) })
 
-    // Sistema interno — fire-and-forget, nunca bloquea ni muestra error al usuario
-    fetch('/api/cotizador-sistema', {
+    // Sistema interno — llamada directa a Railway, fire-and-forget
+    fetch('https://wood-pallet-manager-production.up.railway.app/api/cotizaciones-web/nueva', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': 'wp_prod_k8x2mQnR7tLvP3aY',
+      },
       body: payload,
     })
       .then((res) => { if (res.ok) localStorage.removeItem(STORAGE_KEY) })
